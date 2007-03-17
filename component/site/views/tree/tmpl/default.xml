@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="Dump Tree">
+        <message>
+            <![CDATA[This layout shows a DHTML tree with the dumped items. It's best to use this with 'New Window With(out) Browser Navigation'.]]>
+        </message>
+    </layout>
+    <state>
+        <name>Dump Tree</name>
+        <description>This layout shows a DHTML tree with the dumped items. It's best to use this with 'New Window With(out) Browser Navigation'.</description>
+        <params></params>
+        <advanced></advanced>
+    </state>
+</metadata>
