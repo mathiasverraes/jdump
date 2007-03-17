@@ -1,0 +1,39 @@
+/**
+ * MjazTools Dump
+ * @version      $Id$
+ * @package      mjaztools_dump
+ * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
+ * @license      GNU/GPL
+ * @link         http://forge.joomla.org/sf/projects/mjaztools
+ */
+.dumpContainer {
+	font-size:14px;
+}
+.dumpType {
+	font-size: smaller;
+	color: gray
+}
+.dumpString {
+	font-size: smaller;
+	color: gray
+}
+
+.dumpCollapseAll, .dumpExpandAll, .dumpRefresh, .dumpClose {
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	padding-right: 16px;
+
+}
+
+.dumpCollapseAll {
+	background-image: url(../images/collapseall.png);
+}
+.dumpExpandAll {
+	background-image: url(../images/expandall.png);
+}
+.dumpRefresh {
+	background-image: url(../images/refresh.png);
+}
+.dumpClose {
+	background-image: url(../images/close.png);
+}
