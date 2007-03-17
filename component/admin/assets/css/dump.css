@@ -1,0 +1,31 @@
+.dumpContainer {
+	font-size:14px;
+}
+.dumpType {
+	font-size: smaller;
+	color: gray
+}
+.dumpString {
+	font-size: smaller;
+	color: gray
+}
+
+.dumpCollapseAll, .dumpExpandAll, .dumpRefresh, .dumpClose {
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	padding-right: 16px;
+	
+}
+
+.dumpCollapseAll {
+	background-image: url(../images/collapseall.png);
+}
+.dumpExpandAll {
+	background-image: url(../images/expandall.png);
+}
+.dumpRefresh {
+	background-image: url(../images/refresh.png);
+}
+.dumpClose {
+	background-image: url(../images/close.png);
+}

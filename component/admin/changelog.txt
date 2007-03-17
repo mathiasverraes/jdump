@@ -1,0 +1,20 @@
+Changelog
+---------
+
+v1.0.1
+[BUGFIX] Moved $dispatcher after class declaration for php5
+[BUGFIX] Added 'return false' to javascript links
+[BUGFIX] Fixed notices
+
+v1.0.0 2006-12-29
+[FEATURE] Added dumpSysinfo()
+[FEATURE] Close Button
+[FEATURE] Strings can be trimmed
+[FEATURE] Strings are shown as raw html
+[IMPROVEMENT] Some layout details
+[IMPROVEMENT] Better boolean symbol
+[BUGFIX] Resources showed as 'empty'
+[BUGFIX] No Itemid when no menu is defined
+
+v1.0.0 BETA
+First release

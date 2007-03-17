@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+	<name>Dump</name>
+	<author>MjazTools</author>
+	<creationDate>December 2006</creationDate>
+	<copyright>(c) MjazTools 2006</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail></authorEmail>
+	<authorUrl>http://forge.joomla.org/sf/projects/mjaztools</authorUrl>
+	<version>1.0.1</version>
+	<description>MjazTools Dump Plugin -- This plugin requires the MjazTools Dump component to function. Don't forget to publish this plugin!</description>
+	<files>
+		<filename plugin="dump">dump.php</filename>
+		<filename>dump/node.php</filename>
+		<filename>dump/sysinfo.php</filename>
+	</files>
+	<params>
+	</params>
+</install>
