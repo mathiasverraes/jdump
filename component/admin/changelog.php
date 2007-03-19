@@ -19,6 +19,9 @@ Legend
 	^ -> Change
 	- -> Removed
 	! -> Note
+	
+2007-03-19 Jenscski
+ + Show the file, method and line number where the dump was done
 
 2007-03-17 Mjaz
  ! Moved project to JoomlaCode.org
