@@ -53,8 +53,18 @@ function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
 
     include_once( JPATH_PLUGINS.DS.'system'.DS.'dump'.DS.'node.php' );
 
+		$source = '';
+		if (function_exists('debug_backtrace')) 
+		{
+				$trace = debug_backtrace();
+				
+				$source = DumpHelper::getSourceFunction($trace);
+				$source .= '@';
+				$source .= DumpHelper::getSourcePath($trace);
+		}
+
     // create a new node array
-    $node           = & DumpNode::getNode( $var, $name, $type, $level );
+    $node           = & DumpNode::getNode( $var, $name, $type, $level, $source );
     //get the current userstate
     $userstate      = $mainframe->getUserState( 'dump.nodes' );
     // append the node to the array

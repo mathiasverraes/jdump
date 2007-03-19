@@ -11,12 +11,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class DumpNode {
     
-    function & getNode( $var, $name, $type = null, $level = 0 ) {
+    function & getNode( $var, $name, $type = null, $level = 0, $source = null ) {
         
         $node['name']       = $name;
         $node['type']       = strtolower( $type ? $type : gettype( $var ) );
         $node['children']   = array();
         $node['level']      = $level;
+				$node['source']     = $source;
         
         // expand the var according to type
         switch ( $node['type'] ) {

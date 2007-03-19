@@ -19,7 +19,7 @@ class DumpViewAbout extends JView {
         JMenuBar::title( 'MjazTools Dump v' . DUMP_VERSION );
         $bar = & JToolBar::getInstance('JComponent');
         $bar->appendButton( 'Popup', 'default', 'Popup', "index.php?option=com_dump&view=tree&closebutton=0" );
-        JMenuBar::preferences( 'com_dump', '250' );
+        JMenuBar::preferences( 'com_dump', '280' );
 
 
 /** Not needed here, DumpViewAbout is only used in the administrator

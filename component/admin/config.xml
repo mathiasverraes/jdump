@@ -16,5 +16,10 @@
       <option value="1">Yes</option>
     </param>
 	<param name="maxstrlength" type="text" default="150" label="Maximum String Length" description="Long strings will be trimmed to this number of characters." />
+	<param name="showOrigin" type="radio" default="1"  label="Show origin of call" description="Show the file, line and method from where dump was called.">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </param>
+
   </params>
 </config>

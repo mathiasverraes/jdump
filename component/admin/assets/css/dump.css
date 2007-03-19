@@ -17,6 +17,9 @@
 	font-size: smaller;
 	color: gray
 }
+.dumpSource {
+	font-size: smaller;
+}
 
 .dumpCollapseAll, .dumpExpandAll, .dumpRefresh, .dumpClose {
 	background-repeat: no-repeat;

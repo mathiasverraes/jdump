@@ -98,6 +98,8 @@ class DumpViewTree extends JView {
     function renderObjArray( & $node ) {
         global $node_id;
 
+
+				$params   = JComponentHelper::getParams('com_dump');
         $children = count( $node['children'] );
 
         $output = '';
@@ -109,7 +111,13 @@ class DumpViewTree extends JView {
         $output .= $node['type'];
         $output .= ']</span> ';
         $output .= $node['name'];
-        $output .= $children ? '' : ' = <i>(empty)</i>';
+				if ($node['source'] && $params->def('showOrigin', 1))
+				{
+					$output .= '<span class="dumpSource"> [';
+        	$output .= $node['source'];
+        	$output .= ']</span> ';
+				}
+				$output .= $children ? '' : ' = <i>(empty)</i>';
         $output .= '</a>';
 
         if ( $children ) {

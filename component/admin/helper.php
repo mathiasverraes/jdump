@@ -71,6 +71,40 @@ class DumpHelper extends JObject {
     }
 */
 
+
+		function getSourceFunction(&$trace)
+		{
+				$function = '';
+
+				for ($i=1, $n=count($trace); $i<$n; $i++)
+				{
+					$func = $trace[$i]['function'];
+
+					if ($func!='include' && $func!='include_once' && $func!='require' && $func!='require_once')
+					{
+							if (@$trace[$i]['type'] && @$trace[$i]['class'])
+									$function = $trace[$i]['class'].$trace[$i]['type'].$func;
+							else
+									$function = $func;
+					}
+
+					if ($function) break;
+				}
+
+
+				return $function;
+		}
+
+		function getSourcePath(&$trace)
+		{
+				$path = str_replace(JPATH_BASE.DS, '', $trace[0]['file'])
+				. ':'
+				. $trace[0]['line']
+				;
+
+				return $path;
+		}
+
     function & getMaxDepth() {
         static $maxdepth = null;
 
