@@ -98,3 +98,36 @@ function dumpSysinfo() {
     $sysinfo = new DumpSysinfo();
     dump( $sysinfo->data, 'System Information');
 }
+
+/**
+ * Shortcut to dump the backtrace
+ */
+function dumpTrace()
+{
+	$trace = debug_backtrace();
+
+	$arr = dumpTraceBuild($trace);
+	
+	dump($arr, 'Backtrace', 'backtrace');
+}
+
+function dumpTraceBuild($trace)
+{
+	$ret = array();
+
+	$ret['file']     = $trace[0]['file'];
+	$ret['line']     = $trace[0]['line'];
+	if (isset($trace[0]['class']) && isset($trace[0]['type']))
+		$ret['function'] = $trace[0]['class'].$trace[0]['type'].$trace[0]['function'];
+	else
+		$ret['function'] = $trace[0]['function'];
+	$ret['args']     = $trace[0]['args'];
+
+	array_shift($trace);
+	if (count($trace)>0)
+	{
+		$ret['backtrace'] = dumpTraceBuild($trace);
+	}
+
+	return $ret;
+}

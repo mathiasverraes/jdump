@@ -19,7 +19,10 @@ Legend
 	^ -> Change
 	- -> Removed
 	! -> Note
-	
+
+2007-03-21 Jenscski
+ + New shortcut, dumpTrace. Dumps the backtrace
+
 2007-03-19 Jenscski
  + Show the file, method and line number where the dump was done
 

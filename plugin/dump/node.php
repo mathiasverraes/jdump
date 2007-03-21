@@ -21,6 +21,9 @@ class DumpNode {
         
         // expand the var according to type
         switch ( $node['type'] ) {
+			case 'backtrace': // Skip source when backtrace, and change to array
+				$node['source'] = null;
+				$node['type']   = 'array';
             
             case 'array':
                 if ( $level >= DumpHelper::getMaxDepth() ) {
