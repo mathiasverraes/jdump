@@ -54,12 +54,12 @@ function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
     include_once( JPATH_PLUGINS.DS.'system'.DS.'dump'.DS.'node.php' );
 
 		$source = '';
-		if (function_exists('debug_backtrace')) 
+		if (function_exists('debug_backtrace'))
 		{
 				$trace = debug_backtrace();
-				
+
 				$source = DumpHelper::getSourceFunction($trace);
-				$source .= '@';
+				//$source .= '@';
 				$source .= DumpHelper::getSourcePath($trace);
 		}
 
@@ -107,7 +107,7 @@ function dumpTrace()
 	$trace = debug_backtrace();
 
 	$arr = dumpTraceBuild($trace);
-	
+
 	dump($arr, 'Backtrace', 'backtrace');
 }
 

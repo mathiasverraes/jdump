@@ -83,7 +83,7 @@ class DumpHelper extends JObject {
 					if ($func!='include' && $func!='include_once' && $func!='require' && $func!='require_once')
 					{
 							if (@$trace[$i]['type'] && @$trace[$i]['class'])
-									$function = $trace[$i]['class'].$trace[$i]['type'].$func;
+									$function = $trace[$i]['class'].'<br />&nbsp;'.$trace[$i]['type'].'&nbsp;'.$func.'()';
 							else
 									$function = $func;
 					}
@@ -92,15 +92,15 @@ class DumpHelper extends JObject {
 				}
 
 
-				return $function;
+				return $function.'<br /><br />';
 		}
 
 		function getSourcePath(&$trace)
 		{
-				$path = str_replace(JPATH_BASE.DS, '', $trace[0]['file'])
-				. ':'
-				. $trace[0]['line']
-				;
+				$path = 'File: '.str_replace(JPATH_BASE.DS, '', $trace[0]['file'])
+				. '<br />'
+				. 'Line: '.$trace[0]['line']
+                . '<br />';
 
 				return $path;
 		}

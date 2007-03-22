@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-03-22 Mjaz
+ + Source is shown in a tooltip
+
 2007-03-21 Jenscski
  + New shortcut, dumpTrace. Dumps the backtrace
 

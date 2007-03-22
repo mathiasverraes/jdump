@@ -10,6 +10,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.application.component.view');
+jimport('joomla.html.tooltips');
 
 class DumpViewTree extends JView {
     function display($tpl = null) {
@@ -99,25 +100,24 @@ class DumpViewTree extends JView {
         global $node_id;
 
 
-				$params   = JComponentHelper::getParams('com_dump');
+
         $children = count( $node['children'] );
 
         $output = '';
 
         $output .= '<li class="' . $node['type'] . '.gif">';
-        $output .= '<a href="#" id="' . ++$node_id . '">' ;
+        $output .= '<a href="#" id="a' . ++$node_id . '">' ;
         $output .= '<span class="dumpType"> [';
         $output .= ( isset( $node['classname'] ) ? $node['classname'] . ' ' : '' );
         $output .= $node['type'];
         $output .= ']</span> ';
+
         $output .= $node['name'];
-				if ($node['source'] && $params->def('showOrigin', 1))
-				{
-					$output .= '<span class="dumpSource"> [';
-        	$output .= $node['source'];
-        	$output .= ']</span> ';
-				}
-				$output .= $children ? '' : ' = <i>(empty)</i>';
+        $output .= $this->renderSource( $node );
+
+
+
+        $output .= $children ? '' : ' = <i>(empty)</i>';
         $output .= '</a>';
 
         if ( $children ) {
@@ -142,6 +142,7 @@ class DumpViewTree extends JView {
         $output .= '<a href="#" id="node_' . ++$node_id . '">' ;
         $output .= '<span class="dumpType"> ['. $node['type'] . ']</span> ';
         $output .= $node['name'];
+        $output .= $this->renderSource( $node );
         $output .= '</a>';
         $output .= '</li>';
         return $output;
@@ -158,8 +159,10 @@ class DumpViewTree extends JView {
         $output .= '<span class="dumpType"> ['. $node['type'] . ']</span> ';
         $output .= $node['name'];
         $output .= ' = ' . $node['value'];
+        $output .= $this->renderSource( $node );
         $output .= '</a>';
         $output .= '</li>';
+
         return $output;
 
     }
@@ -173,7 +176,9 @@ class DumpViewTree extends JView {
         $output .= '<a href="#" id="node_' . ++$node_id . '">' ;
         $output .= '<span class="dumpType"> ['. $node['type'] . ']</span> ';
         $output .= $node['name'];
+        $output .= $this->renderSource( $node );
         $output .= ' = ' . ( $node['value'] ? 'TRUE' : 'FALSE' );
+        $output .= $this->renderSource( $node );
         $output .= '</a>';
         $output .= '</li>';
         return $output;
@@ -192,6 +197,7 @@ class DumpViewTree extends JView {
         $output .= $node['name'];
         $output .= ' = "' . nl2br(htmlspecialchars( $node['value'] , ENT_QUOTES ) ). '"';
         if ( isset($node['length']) ) { $output .= ' <span class="dumpString">(Length = '.intval($node['length']).')</span>'; }
+        $output .= $this->renderSource( $node );
         $output .= '</a>';
         $output .= '</li>';
         return $output;
@@ -206,6 +212,7 @@ class DumpViewTree extends JView {
         $output .= '<li class="' . $node['type'] . '.gif">';
         $output .= '<a href="#" id="node_' . ++$node_id . '">' ;
         $output .= '<i>'.$node['value'].'</i>';
+        $output .= $this->renderSource( $node );
         $output .= '</a>';
         $output .= '</li>';
         return $output;
@@ -247,5 +254,25 @@ class DumpViewTree extends JView {
         return $output;
 
 
+    }
+
+    function & renderSource( & $node ) {
+        global $mainframe;
+
+        $params   = JComponentHelper::getParams('com_dump');
+
+        $output = '';
+
+        if ($node['source'] && $params->get('showOrigin', 1))
+        {
+            // next line doesn't work - bug in J?
+            //$output .=  JCommonHTML::ToolTip($node['source'], 'Source');
+
+            $tooltip    = htmlspecialchars($node['source']);
+            $output .= '&nbsp;<span class="hasTip" width="600px" title="'.$tooltip.'"><img src="'.$mainframe->getCfg('live_site').'/includes/js/ThemeOffice/content.png" alt="Tooltip" border="0" width="12" hieght="12"></span>';
+
+        }
+
+        return $output;
     }
 }
