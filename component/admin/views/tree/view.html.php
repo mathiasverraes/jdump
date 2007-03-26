@@ -32,6 +32,7 @@ class DumpViewTree extends JView {
         $document->addStyleSheet( DUMP_URL . 'assets/css/folder-tree-static.css' );
         $document->addStyleSheet( DUMP_URL . 'assets/css/dump.css' );
         $document->addScript( DUMP_URL . 'assets/js/folder-tree-static.js');
+        $document->addScript( DUMP_URL . 'assets/js/dump.js');
 
         // render tree and assign to template
         $tree =& $this->renderTree();

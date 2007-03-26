@@ -21,7 +21,7 @@
 	font-size: smaller;
 }
 
-.dumpCollapseAll, .dumpExpandAll, .dumpRefresh, .dumpClose {
+.dumpCollapseAll, .dumpExpandAll, .dumpRefresh, .dumpClose, .dumpLock, .dumpLocked {
 	background-repeat: no-repeat;
 	padding-left: 20px;
 	padding-right: 16px;
@@ -39,4 +39,12 @@
 }
 .dumpClose {
 	background-image: url(../images/close.png);
+}
+.dumpLock {
+	background-image: url(../images/unlocked.png);
+}
+
+.dumpLocked {
+	background-image: url(../images/locked.png);
+	display: none;
 }

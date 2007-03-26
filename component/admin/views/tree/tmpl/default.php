@@ -14,7 +14,11 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <legend>Application: <?php echo ucfirst($this->application) ?></legend>
 <br />
 
-<a href="#" onclick="window.location.reload( true );return false;" class="dumpRefresh">Refresh</a>
+<a href="#" onclick="return false;" id="dumpLocked" class="dumpLocked">Window is locked</a>
+
+<a href="#" onclick="dumpLockWindow();return false;" id="dumpLock" class="dumpLock">Lock Window</a>
+
+<a href="#" onclick="window.location.reload( true );return false;" id="dumpRefresh" class="dumpRefresh">Refresh</a>
 
 <?php if( $this->closebutton ) {
     ?><a href="#" onclick="window.close();return false;" class="dumpClose">Close Window</a><?php
