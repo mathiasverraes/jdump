@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-03-26 Mjaz
+ + Added icons for locking: locked.png, unlocked.png
+
 2007-03-22 Mjaz
  + Source is shown in a tooltip
 

@@ -38,6 +38,7 @@
             <filename>assets/images/expandall.png</filename>
             <filename>assets/images/float.gif</filename>
             <filename>assets/images/integer.gif</filename>
+            <filename>assets/images/locked.png</filename>
             <filename>assets/images/message.gif</filename>
             <filename>assets/images/method.gif</filename>
             <filename>assets/images/methods.gif</filename>
@@ -47,6 +48,8 @@
             <filename>assets/images/refresh.png</filename>
             <filename>assets/images/resource.gif</filename>
             <filename>assets/images/string.gif</filename>
+            <filename>assets/images/unlocked.png</filename>
+
             <filename>assets/js/folder-tree-static.js</filename>
 
             <filename>models/about.php</filename>
