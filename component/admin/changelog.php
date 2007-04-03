@@ -20,8 +20,11 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-04-03 Jenscski
+ # Fixed popup on IE
+
 2007-03-26 Jenscski
- * Added locking to dump window
+ + Added locking to dump window
 
 2007-03-26 Mjaz
  + Added icons for locking: locked.png, unlocked.png

@@ -39,7 +39,7 @@ class DumpHelper extends JObject {
         $script = $nl. '<!-- MjazTools Dump -->' .$nl.
                 '<script type="text/javascript">' .$nl.
                 '// <!--' .$nl.
-                'window.open( "'.$url.'", "dump-'.$client->name.'", "height='.$h.',width='.$w.',toolbar=0,status=0,menubar=0,scrollbars=1,resizable=1");' .$nl.
+                'window.open( "'.$url.'", "dump_'.$client->name.'", "height='.$h.',width='.$w.',toolbar=0,status=0,menubar=0,scrollbars=1,resizable=1");' .$nl.
                 '// -->' .$nl.
                 '</script>' .$nl.
                 '<!-- / MjazTools Dump -->';
