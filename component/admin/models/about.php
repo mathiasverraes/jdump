@@ -20,7 +20,7 @@ class DumpModelAbout extends JModel {
         $this->_data = new JObject();
 
         //get plugin info
-        jimport( 'joomla.application.plugin.helper' );
+        jimport( 'joomla.event.helper' );
         $this->_data->plugin = & JPluginHelper::getPlugin( 'system', 'dump' );
         if( !$this->_data->plugin OR !$this->_data->plugin->published ) {
             $mainframe->enqueueMessage( 'To use MjazTools Dump, the Dump plugin has to be <a href="index.php?option=com_installer">installed</a> and <a href="index.php?option=com_plugins&filter_type=system">published</a>.' );

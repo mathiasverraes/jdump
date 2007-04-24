@@ -9,7 +9,7 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-jimport( 'joomla.application.plugin.helper' );
+jimport( 'joomla.event.helper' );
 
 if( file_exists( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.php' ) ) {
     require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.php' );

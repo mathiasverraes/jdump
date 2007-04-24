@@ -20,6 +20,10 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-04-24 Jenscski
+ # JMenuBar changed to JToolBarHelper
+ # JPluginHelper changed place
+
 2007-04-03 Jenscski
  # Fixed popup on IE
 
