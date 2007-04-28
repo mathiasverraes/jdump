@@ -1,13 +1,4 @@
-	p{
-		font-family:arial;
-		
-	}
-	a{
-		color:#000;
-		font-family:arial;
-		font-size:0.8em;
-	}
-	
+
 	.dhtmlgoodies_tree{
 		margin:0px;
 		padding:0px;
@@ -20,7 +11,7 @@
 	.dhtmlgoodies_tree li{	/* Nodes */
 		list-style-type:none;
 		vertical-align:middle;
-		
+
 	}
 	.dhtmlgoodies_tree li a{	/* Node links */
 		color:#000;

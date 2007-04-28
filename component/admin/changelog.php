@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-04-27 Mjaz
+ # Fixed tooltips layout and other issues
+
 2007-04-24 Jenscski
  # JMenuBar changed to JToolBarHelper
  # JPluginHelper changed place

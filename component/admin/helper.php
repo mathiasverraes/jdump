@@ -92,7 +92,7 @@ class DumpHelper extends JObject {
 				}
 
 
-				return $function.'<br /><br />';
+				return "Function: $function<br />";
 		}
 
 		function getSourcePath(&$trace)
