@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-05-04
+ # API changes in Joomla!
+
 2007-04-27 Mjaz
  # Fixed tooltips layout and other issues
 
