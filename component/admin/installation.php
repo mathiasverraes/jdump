@@ -5,7 +5,7 @@
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
  * @license      GNU/GPL
- * @link         http://forge.joomla.org/sf/projects/mjaztools
+ * @link         http://joomlacode.org/gf/project/jdump/
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>

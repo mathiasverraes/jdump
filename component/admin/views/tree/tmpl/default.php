@@ -5,7 +5,7 @@
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
  * @license      GNU/GPL
- * @link         http://forge.joomla.org/sf/projects/mjaztools
+ * @link         http://joomlacode.org/gf/project/jdump/
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
@@ -36,5 +36,5 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 <br />
 
-<a href='http://forge.joomla.org/sf/projects/mjaztools' target='_blank' style='margin-right:10px;font-size:10px'>MjazTools Dump v<?php echo $this->version?></a>
+<a href='http://joomlacode.org/gf/project/jdump/' target='_blank' style='margin-right:10px;font-size:10px'>MjazTools Dump v<?php echo $this->version?></a>
 </fieldset>

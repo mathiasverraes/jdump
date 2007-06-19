@@ -5,7 +5,7 @@
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
  * @license      GNU/GPL
- * @link         http://forge.joomla.org/sf/projects/mjaztools
+ * @link         http://joomlacode.org/gf/project/jdump/
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
@@ -20,7 +20,10 @@ Legend
 	- -> Removed
 	! -> Note
 
-2007-05-04
+2007-06-19 Jenscski
+ ^ Change url from forge to joomlacode
+
+2007-05-04 Jenscski
  # API changes in Joomla!
 
 2007-04-27 Mjaz

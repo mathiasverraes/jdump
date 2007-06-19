@@ -5,14 +5,14 @@
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
  * @license      GNU/GPL
- * @link         http://forge.joomla.org/sf/projects/mjaztools
+ * @link         http://joomlacode.org/gf/project/jdump/
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
 
 
 Find more MjazTools at:
-http://forge.joomla.org/sf/projects/mjaztools
+http://joomlacode.org/gf/project/jdump/
 Always download extensions from the official site, so you know they haven't been tampered with.
 
 Discuss this extension at:
