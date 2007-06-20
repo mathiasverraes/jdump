@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="plugin" group="system">
 	<name>J!Dump</name>
-	<author>MjazTools</author>
+	<author>J!Dump Team</author>
 	<creationDate>March 2007</creationDate>
-	<copyright>(c) MjazTools 2006-2007</copyright>
+	<copyright>(c) J!Dump Team 2006-2007</copyright>
 	<license>GNU/GPL</license>
 	<authorEmail></authorEmail>
 	<authorUrl>http://joomlacode.org/gf/project/jdump/</authorUrl>
