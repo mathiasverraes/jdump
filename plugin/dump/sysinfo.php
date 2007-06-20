@@ -1,6 +1,6 @@
 <?php
 /**
- * MjazTools Dump
+ * J!Dump
  * @version      $Id$
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
@@ -46,7 +46,7 @@ class DumpSysinfo extends JObject {
     function _loadVersions() {
         $version = new JVersion();
         $this->data['Versions']['Joomla!']        = $version->getLongVersion();
-        $this->data['Versions']['MjazTools Dump'] = DUMP_VERSION;
+        $this->data['Versions']['J!Dump'] = DUMP_VERSION;
         $this->data['Versions']['PHP']            = phpversion();
         $this->data['Versions']['Apache']         = apache_get_version();
         $this->data['Versions']['Zend Engine']    = zend_version();

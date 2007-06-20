@@ -1,6 +1,6 @@
 <?php
 /**
- * MjazTools Dump
+ * J!Dump
  * @version      $Id$
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
@@ -9,7 +9,7 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
-MjazTools Dump
+J!Dump
 --------------
 
 Advanced print_r and var_dump replacer with DHTML tree display.

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="plugin" group="system">
-	<name>MjazTools Dump</name>
+	<name>J!Dump</name>
 	<author>MjazTools</author>
 	<creationDate>March 2007</creationDate>
 	<copyright>(c) MjazTools 2006-2007</copyright>
 	<license>GNU/GPL</license>
 	<authorEmail></authorEmail>
 	<authorUrl>http://joomlacode.org/gf/project/jdump/</authorUrl>
-	<version>1.0.3</version>
-	<description>MjazTools Dump Plugin -- This plugin requires the MjazTools Dump component to function. Don't forget to publish this plugin!</description>
+	<version>1.1.0</version>
+	<description>J!Dump Plugin -- This plugin requires the J!Dump component to function. Don't forget to publish this plugin!</description>
 	<files>
 		<filename plugin="dump">dump.php</filename>
 		<filename>dump/node.php</filename>

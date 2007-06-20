@@ -1,6 +1,6 @@
 <?php
 /**
- * MjazTools Dump
+ * J!Dump
  * @version      $Id$
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
@@ -16,7 +16,7 @@ class DumpViewAbout extends JView {
         global $mainframe;
 
         // Toolbar
-        JToolBarHelper::title( 'MjazTools Dump v' . DUMP_VERSION );
+        JToolBarHelper::title( 'J!Dump v' . DUMP_VERSION );
         $bar = & JToolBar::getInstance('JComponent');
         $bar->appendButton( 'Popup', 'default', 'Popup', "index.php?option=com_dump&view=tree&closebutton=0" );
         JToolBarHelper::preferences( 'com_dump', '280' );

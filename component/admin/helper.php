@@ -1,6 +1,6 @@
 <?php
 /**
- * MjazTools Dump
+ * J!Dump
  * @version      $Id$
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
@@ -36,13 +36,13 @@ class DumpHelper extends JObject {
         // create the javascript
         // We can't use $document, because it's already rendered
         $nl = "\n";
-        $script = $nl. '<!-- MjazTools Dump -->' .$nl.
+        $script = $nl. '<!-- J!Dump -->' .$nl.
                 '<script type="text/javascript">' .$nl.
                 '// <!--' .$nl.
                 'window.open( "'.$url.'", "dump_'.$client->name.'", "height='.$h.',width='.$w.',toolbar=0,status=0,menubar=0,scrollbars=1,resizable=1");' .$nl.
                 '// -->' .$nl.
                 '</script>' .$nl.
-                '<!-- / MjazTools Dump -->';
+                '<!-- / J!Dump -->';
 
         // add the code to the header (thanks jenscski)
         // JResponse::appendBody( $script );

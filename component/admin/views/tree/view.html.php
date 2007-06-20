@@ -1,6 +1,6 @@
 <?php
 /**
- * MjazTools Dump
+ * J!Dump
  * @version      $Id$
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
@@ -27,7 +27,7 @@ class DumpViewTree extends JView {
         JRequest::setVar( 'tmpl', 'component' );
 
         $document   =& JFactory::getDocument();
-        $document->setTitle( 'MjazTools Dump - ' . ucfirst( $client->name ) );
+        $document->setTitle( 'J!Dump - ' . ucfirst( $client->name ) );
         $document->addScriptDeclaration( "var imageFolder =  '" . DUMP_URL . "assets/images/'" );	// Path to images
         $document->addStyleSheet( DUMP_URL . 'assets/css/folder-tree-static.css' );
         $document->addStyleSheet( DUMP_URL . 'assets/css/dump.css' );

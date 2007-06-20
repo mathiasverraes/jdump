@@ -1,6 +1,6 @@
 <?php
 /**
- * MjazTools Dump
+ * J!Dump
  * @version      $Id$
  * @package      mjaztools_dump
  * @copyright    Copyright (C) 2007 MjazTools. All rights reserved.
@@ -23,7 +23,7 @@ class DumpModelAbout extends JModel {
         jimport( 'joomla.event.helper' );
         $this->_data->plugin = & JPluginHelper::getPlugin( 'system', 'dump' );
         if( !$this->_data->plugin OR !$this->_data->plugin->published ) {
-            $mainframe->enqueueMessage( 'To use MjazTools Dump, the Dump plugin has to be <a href="index.php?option=com_installer">installed</a> and <a href="index.php?option=com_plugins&filter_type=system">published</a>.' );
+            $mainframe->enqueueMessage( 'To use J!Dump, the Dump plugin has to be <a href="index.php?option=com_installer">installed</a> and <a href="index.php?option=com_plugins&filter_type=system">published</a>.' );
         }
 
         parent::__construct();

@@ -7,8 +7,8 @@
     <license>GNU/GPL</license>
     <authorEmail></authorEmail>
     <authorUrl>http://joomlacode.org/gf/project/jdump/</authorUrl>
-    <version>1.0.3</version>
-    <description>MjazTools Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
+    <version>1.1.0</version>
+    <description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
     <files folder="site">
         <filename>dump.php</filename>
         <filename>views/tree/metadata.xml</filename>
