@@ -34,6 +34,9 @@ Shortcuts
   Use inside a template's index.php to dump the parameters.
 - dumpMessage( 'Your message' );
   Displays a custom message. Very handy to check if a function or a loop is executed etc...
+- dumpBacktrace();
+  Displays the backtrace.
+  
 
 Notes
 -----
