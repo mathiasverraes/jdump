@@ -28,7 +28,7 @@ class DumpViewAbout extends JView {
 */
 
 
-        $files = array( 'readme', 'changelog', 'mjaztools', 'installation' );
+        $files = array( 'readme', 'changelog', 'installation' );
         foreach( $files as $file ) {
             $this->assignRef( $file, $this->get( $file ) );
         }

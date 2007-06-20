@@ -41,10 +41,6 @@ class DumpModelAbout extends JModel {
     function & getInstallation() {
         return $this->_getFile( 'installation.php' );
     }
-    function & getMjaztools() {
-        return $this->_getFile( 'mjaztools.php' );
-    }
-
 
     function & _getFile( $filename ){
         ob_start();
