@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-07-03 Mjaz
+ ^ Changed component menu name to J!Dump
+
 2007-06-19 Jenscski
  ^ Change url from forge to joomlacode
 

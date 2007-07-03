@@ -59,6 +59,6 @@
             <filename>views/tree/view.html.php</filename>
             <filename>views/tree/tmpl/default.php</filename>
         </files>
-        <menu>Dump</menu>
+        <menu>J!Dump</menu>
     </administration>
 </install>
