@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-08-16 Jenscski
+ ^ Changed plugin to reflect changes in framework
+
 2007-07-03 Mjaz
  ^ Changed component menu name to J!Dump
 

@@ -18,9 +18,9 @@ if( file_exists( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.ph
     JError::raiseNotice( 20, 'The Dump Plugin needs the Dump Component to function.' );
 }
 
-class DumpPlugin extends JPlugin {
-    function dumpPlugin(& $subject) {
-        parent::__construct($subject);
+class plgSystemDump extends JPlugin {
+    function plgSystemDump(& $subject, $params) {
+        parent::__construct($subject, $params);
     }
 
     function onAfterRender() {
@@ -39,9 +39,6 @@ class DumpPlugin extends JPlugin {
     }
 }
 
-// create dispatcher and attach object to dispatcher
-$dispatcher = & JEventDispatcher::getInstance();
-$dispatcher->attach( new DumpPlugin( $dispatcher ) );
 
 /**
  * Add a variable to the list of variables that will be shown in the debug window
