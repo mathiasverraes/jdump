@@ -21,7 +21,7 @@ class DumpViewTree extends JView {
 
         // client information (site, administrator, ... )
         jimport( 'joomla.application.helper' );
-        $client = JApplicationHelper::getClientInfo();
+        $client = JApplicationHelper::getClientInfo($mainframe->getClientID());
 
         // make sure we only show the component
         JRequest::setVar( 'tmpl', 'component' );

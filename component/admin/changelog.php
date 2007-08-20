@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2007-08-20 Jenscski
+ ^ Changed the way JApplicationHelper::getClientInfo is called. Needs clientid as parameter
+
 2007-08-16 Jenscski
  ^ Changed plugin to reflect changes in framework
 

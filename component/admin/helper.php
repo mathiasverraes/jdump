@@ -16,7 +16,7 @@ class DumpHelper extends JObject {
         global $mainframe;
 
         jimport( 'joomla.application.helper' );
-        $client     = JApplicationHelper::getClientInfo();
+        $client     = JApplicationHelper::getClientInfo($mainframe->getClientID());
 
         // settings from config.xml
         $dumpConfig = & JComponentHelper::getParams( 'com_dump' );
