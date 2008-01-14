@@ -24,7 +24,7 @@ class DumpHelper extends JObject {
         $h          = $dumpConfig->get( 'popupheight', 500 );
 
         // build the url
-        $url = 'index.php?option=com_dump&view=tree&tmpl=component';
+        $url = JURI::base(true).'/index.php?option=com_dump&view=tree&tmpl=component';
 
         /* @TODO remove this and implement this in a later version using JRoute
         // only add Itemid in Site

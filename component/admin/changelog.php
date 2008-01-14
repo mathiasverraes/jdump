@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2008-01-14
+ # Fix for url to popup on SEF enabled sites
+
 2007-08-20 Jenscski
  ^ Changed the way JApplicationHelper::getClientInfo is called. Needs clientid as parameter
 
