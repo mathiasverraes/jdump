@@ -17,9 +17,9 @@ class DumpViewAbout extends JView {
 
         // Toolbar
         JToolBarHelper::title( 'J!Dump v' . DUMP_VERSION );
-        $bar = & JToolBar::getInstance('JComponent');
+        $bar = & JToolBar::getInstance('toolbar');
         $bar->appendButton( 'Popup', 'default', 'Popup', "index.php?option=com_dump&view=tree&closebutton=0" );
-        JToolBarHelper::preferences( 'com_dump', '280' );
+        JToolBarHelper::preferences( 'com_dump', '300' );
 
 
 /** Not needed here, DumpViewAbout is only used in the administrator

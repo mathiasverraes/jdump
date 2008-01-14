@@ -22,6 +22,8 @@ Legend
 
 2008-01-14
  # Fix for url to popup on SEF enabled sites
+ ^ Increased height of preference window
+ ^ Changed way of telling if dump plugin is enabled
 
 2007-08-20 Jenscski
  ^ Changed the way JApplicationHelper::getClientInfo is called. Needs clientid as parameter

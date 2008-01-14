@@ -22,8 +22,8 @@ class DumpModelAbout extends JModel {
         //get plugin info
         jimport( 'joomla.event.helper' );
         $this->_data->plugin = & JPluginHelper::getPlugin( 'system', 'dump' );
-        if( !$this->_data->plugin OR !$this->_data->plugin->published ) {
-            $mainframe->enqueueMessage( 'To use J!Dump, the Dump plugin has to be <a href="index.php?option=com_installer">installed</a> and <a href="index.php?option=com_plugins&filter_type=system">published</a>.' );
+        if( empty($this->_data->plugin) ) {
+            $mainframe->enqueueMessage( 'To use J!Dump, the Dump plugin has to be <a href="index.php?option=com_installer">installed</a> and <a href="index.php?option=com_plugins&amp;filter_type=system">published</a>.' );
         }
 
         parent::__construct();
