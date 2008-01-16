@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2008-01-16
+	# Fix for installation in subfolder
+
 2008-01-14
  # Fix for url to popup on SEF enabled sites
  ^ Increased height of preference window
