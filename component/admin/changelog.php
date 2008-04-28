@@ -20,6 +20,9 @@ Legend
 	- -> Removed
 	! -> Note
 
+2008-04-28
+  # Fix for installation in subfolder
+
 2008-01-16
 	# Fix for installation in subfolder
 
