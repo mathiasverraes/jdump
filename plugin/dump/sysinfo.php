@@ -33,7 +33,7 @@ class DumpSysinfo extends JObject {
     }
 
     function _loadDefined() {
-        switch ( DUMP_PHP ) { 
+        switch ( DUMP_PHP ) {
             case 4:
                 $this->data['All Defined Constants'] = get_defined_constants();
                    break;

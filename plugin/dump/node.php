@@ -10,21 +10,21 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class DumpNode {
-    
+
     function & getNode( $var, $name, $type = null, $level = 0, $source = null ) {
-        
+
         $node['name']       = $name;
         $node['type']       = strtolower( $type ? $type : gettype( $var ) );
         $node['children']   = array();
         $node['level']      = $level;
 				$node['source']     = $source;
-        
+
         // expand the var according to type
         switch ( $node['type'] ) {
 			case 'backtrace': // Skip source when backtrace, and change to array
 				$node['source'] = null;
 				$node['type']   = 'array';
-            
+
             case 'array':
                 if ( $level >= DumpHelper::getMaxDepth() ) {
                     $node['children'][] = & DumpNode::getNode( 'Maximum depth reached', null, 'message' );
@@ -34,7 +34,7 @@ class DumpNode {
                     }
                 }
                 break;
-            
+
             case 'object':
                 if ( $level >= DumpHelper::getMaxDepth() ) {
                     $node['children'][] = & DumpNode::getNode( 'Maximum depth reached', null, 'message' );
@@ -50,32 +50,32 @@ class DumpNode {
                 }
                 $node['classname'] = get_class( $var );
                 break;
-            
+
             case 'properties':
                 $object_vars = get_object_vars( $var ) ;
                 foreach ( $object_vars as $key => $value ) {
                     $node['children'][] = & DumpNode::getNode( $value, $key, null, $level + 1 );
                 }
                 break;
-            
+
             case 'methods':
                 $methods = get_class_methods( $var ) ;
                 foreach ( $methods as $value ) {
                     $node['children'][] = & DumpNode::getNode( null, $value, 'method' );
-                }   
+                }
                 break;
-            
-			
+
+
             case 'string':
 				jimport( 'joomla.application.component.helper' );
 				// settings from config.xml
 				$dumpConfig		= & JComponentHelper::getParams( 'com_dump' );
 				$trimstrings	= $dumpConfig->get( 'trimstrings', 1);
 				$maxstrlength	= $dumpConfig->get( 'maxstrlength', 150);
-				
+
 				//original string length
 				$length			= JString::strlen( $var );
-				
+
 				// trim string if needed
 				if( $trimstrings AND $length > $maxstrlength ) {
 					$var = JString::substr( $var, 0, $maxstrlength ) . '...';
@@ -88,9 +88,9 @@ class DumpNode {
             default:
                 $node['value']        = & $var;
                 break;
-            
+
         }
-        
+
         return $node;
     }
 
