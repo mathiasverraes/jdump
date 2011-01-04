@@ -23,8 +23,8 @@ class DumpController extends JController{
         // get some vars
         $document   = & JFactory::getDocument();
         $viewType   = $document->getType();
-        $viewName	= JRequest::getVar( 'view', 'about' );
-        $viewLayout = JRequest::getVar( 'layout', 'default' );
+        $viewName	= JRequest::getCmd( 'view', 'about' );
+        $viewLayout = JRequest::getCmd( 'layout', 'default' );
 
         // get the view & set the layout
         $view       = & $this->getView( $viewName,  $viewType);

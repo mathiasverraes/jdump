@@ -40,7 +40,7 @@ class DumpViewTree extends JView {
 
         $this->assignRef(	'application',	$client->name );
         $this->assign(		'version',			DUMP_VERSION );
-        $this->assign(		'closebutton',		JRequest::getVar( 'closebutton', 1 ) );
+        $this->assign(		'closebutton',		JRequest::getInt( 'closebutton', 1 ) );
 
         parent::display($tpl);
     }

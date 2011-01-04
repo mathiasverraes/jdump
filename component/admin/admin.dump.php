@@ -16,7 +16,7 @@ require_once( JPATH_COMPONENT_ADMINISTRATOR . DS . 'defines.php' );
 require_once( JPATH_COMPONENT_ADMINISTRATOR . DS . 'controller.php' );
 
 // Require specific controller if requested
-if( $controller = JRequest::getVar('controller') ) {
+if( $controller = JRequest::getCmd('controller') ) {
     require_once ( JPATH_COMPONENT_ADMINISTRATOR . DS . 'controllers' . DS . $controller . '.php' );
 }
 
@@ -25,6 +25,6 @@ $classname  = 'DumpController'.$controller;
 $controller = new $classname();
 
 // Perform the Request task
-$controller->execute( JRequest::getVar( 'task' ) );
+$controller->execute( JRequest::getCmd( 'task' ) );
 
 $controller->redirect();
