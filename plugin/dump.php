@@ -48,7 +48,7 @@ class plgSystemDump extends JPlugin {
 function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 ) {
     $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
-    include_once( JPATH_PLUGINS.DS.'system'.DS.'dump'.DS.'node.php' );
+    include_once( JPATH_PLUGINS.DS.'system'.DS.'dump' .DS. 'dump'.DS.'node.php' );
 
 		$source = '';
 		if (function_exists('debug_backtrace'))
