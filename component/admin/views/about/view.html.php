@@ -13,7 +13,7 @@ jimport( 'joomla.application.component.view');
 
 class DumpViewAbout extends JView {
     function display($tpl = null) {
-        global $mainframe;
+        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         // Toolbar
         JToolBarHelper::title( 'J!Dump v' . DUMP_VERSION );

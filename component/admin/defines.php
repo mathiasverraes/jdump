@@ -9,7 +9,7 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-global $mainframe;
+$mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 $phpversion = explode( '.', phpversion() );
 
 define( 'DUMP_VERSION', '1.1.0' );

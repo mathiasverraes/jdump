@@ -24,7 +24,7 @@ class plgSystemDump extends JPlugin {
     }
 
     function onAfterRender() {
-        global $mainframe;
+       $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         // settings from config.xml
         $dumpConfig = & JComponentHelper::getParams( 'com_dump' );
@@ -46,7 +46,7 @@ class plgSystemDump extends JPlugin {
  * @param mixed $name The name of the variable you want to dump
  */
 function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 ) {
-    global $mainframe;
+    $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
     include_once( JPATH_PLUGINS.DS.'system'.DS.'dump'.DS.'node.php' );
 

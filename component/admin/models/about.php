@@ -15,7 +15,7 @@ class DumpModelAbout extends JModel {
     var $_data;
 
     function __construct() {
-        global $mainframe;
+        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         $this->_data = new JObject();
 

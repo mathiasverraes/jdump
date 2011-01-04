@@ -14,7 +14,9 @@ jimport('joomla.application.component.controller');
 class DumpController extends JController{
 
     function display() {
-        global $mainframe, $option, $Itemid;
+        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+        $Itemid = JRequest::getInt('Itemid');
+        
 
         // we need to add these paths so the component can work in both site and administrator
         $this->addViewPath( JPATH_COMPONENT_ADMINISTRATOR . DS . 'views' );

@@ -13,7 +13,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 class DumpHelper extends JObject {
 
     function showPopup() {
-        global $mainframe;
+        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         jimport( 'joomla.application.helper' );
         $client     = JApplicationHelper::getClientInfo($mainframe->getClientID());

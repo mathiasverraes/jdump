@@ -14,7 +14,7 @@ JHTML::_('behavior.tooltip');
 
 class DumpViewTree extends JView {
     function display($tpl = null) {
-        global $mainframe;
+        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         // we need to add these paths so the component can work in both site and administrator
         $this->addTemplatePath( dirname(__FILE__) . DS . 'tmpl' );
@@ -46,7 +46,7 @@ class DumpViewTree extends JView {
     }
 
     function & renderTree() {
-        global $mainframe;
+        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         $output = '';
 
@@ -258,7 +258,7 @@ class DumpViewTree extends JView {
     }
 
     function & renderSource( & $node ) {
-        global $mainframe;
+        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         $params   = JComponentHelper::getParams('com_dump');
 
