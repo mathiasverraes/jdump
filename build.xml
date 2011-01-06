@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<project name="J!Dump" basedir="." default="build" description="Build J!Dump packages">
+
+	<target name="init" description="Initialize" depends="clean">
+		<property file="config.ini"  override="false" />
+		<mkdir dir="build" />
+	</target>
+
+	<target name="clean" description="Cleanup">
+		<delete dir="build" includeemptydirs="true" />
+	</target>
+	
+	<target name="build" description="Build installable package" depends="init">
+		<mkdir dir="build/packages" />
+		<tar destfile="build/packages/jdump_component_v${version}.tar.gz" basedir="src/component" compression="gzip" />
+		<tar destfile="build/packages/jdump_plugin_v${version}.tar.gz" basedir="src/plugin" compression="gzip" />
+	</target>
+
+	
+</project>
