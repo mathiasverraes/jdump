@@ -1,25 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <params>
-    <param name="popupwidth" type="text" default="500" maxlength="5" label="Popup width" description="The width of the popup window" />
-    <param name="popupheight" type="text" default="500" maxlength="5" label="Popup height" description="The height of the popup window" />
-    <param name="autopopup" type="radio" default="1"  label="Auto Popup" description="Automatically show popup window when new items are dumped.">
-      <option value="0">No</option>
-      <option value="1">Yes</option>
-    </param>
+	<!-- for Joomla 1.5 -->
+	<params>
+		<param name="popupwidth" type="text" default="500" maxlength="5"
+			label="Popup width" description="The width of the popup window" />
+		<param name="popupheight" type="text" default="500" maxlength="5"
+			label="Popup height" description="The height of the popup window" />
+		<param name="autopopup" type="radio" default="1" label="Auto Popup"
+			description="Automatically show popup window when new items are dumped.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
 
-	<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
 
-    <param name="maxdepth" type="text" default="5" maxlength="2" label="Maximum recursion depth" description="The number of levels that should be dumped for arrays and objects. Min=1, max=20" />
-	<param name="trimstrings" type="radio" default="1"  label="Trim Strings" description="Trim long strings.">
-      <option value="0">No</option>
-      <option value="1">Yes</option>
-    </param>
-	<param name="maxstrlength" type="text" default="150" label="Maximum String Length" description="Long strings will be trimmed to this number of characters." />
-	<param name="showOrigin" type="radio" default="1"  label="Show origin of call" description="Show the file, line and method from where dump was called.">
-      <option value="0">No</option>
-      <option value="1">Yes</option>
-    </param>
+		<param name="maxdepth" type="text" default="5" maxlength="2"
+			label="Maximum recursion depth"
+			description="The number of levels that should be dumped for arrays and objects. Min=1, max=20" />
+		<param name="trimstrings" type="radio" default="1" label="Trim Strings"
+			description="Trim long strings.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="maxstrlength" type="text" default="150"
+			label="Maximum String Length" description="Long strings will be trimmed to this number of characters." />
+		<param name="showOrigin" type="radio" default="1"
+			label="Show origin of call" description="Show the file, line and method from where dump was called.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
 
-  </params>
+	</params>
+
+	<!-- for Joomla 1.6 -->
+	<fieldset name="component">
+		<field name="popupwidth" type="text" default="500" maxlength="5"
+			label="Popup width" description="The width of the popup window" />
+		<field name="popupheight" type="text" default="500" maxlength="5"
+			label="Popup height" description="The height of the popup window" />
+		<field name="autopopup" type="radio" default="1" label="Auto Popup"
+			description="Automatically show popup window when new items are dumped.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+
+		<field name="@spacer" type="spacer" default="" label=""
+			description="" />
+
+		<field name="maxdepth" type="text" default="5" maxlength="2"
+			label="Maximum recursion depth"
+			description="The number of levels that should be dumped for arrays and objects. Min=1, max=20" />
+		<field name="trimstrings" type="radio" default="1" label="Trim Strings"
+			description="Trim long strings.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+		<field name="maxstrlength" type="text" default="150"
+			label="Maximum String Length" description="Long strings will be trimmed to this number of characters." />
+		<field name="showOrigin" type="radio" default="1"
+			label="Show origin of call" description="Show the file, line and method from where dump was called.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+	</fieldset>
 </config>
