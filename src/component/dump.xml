@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install version="1.5" type="component">
+<install version="1.5" type="component" method="upgrade">
     <name>J!Dump</name>
     <author>Mathias Verraes</author>
     <creationDate>January 2011</creationDate>
@@ -11,8 +11,7 @@
     <description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
     <files folder="site">
         <filename>dump.php</filename>
-        <filename>views/tree/metadata.xml</filename>
-        <filename>views/tree/tmpl/default.xml</filename>
+        <folder>views</folder>
     </files>
     <administration>
         <files folder="admin">
@@ -26,39 +25,9 @@
             <filename>node.php</filename>
 			<filename>sysinfo.php</filename>
 
-            <filename>assets/css/dump.css</filename>
-            <filename>assets/css/folder-tree-static.css</filename>
-            <filename>assets/images/array.gif</filename>
-            <filename>assets/images/boolean.gif</filename>
-            <filename>assets/images/close.png</filename>
-            <filename>assets/images/collapseall.png</filename>
-            <filename>assets/images/dhtmlgoodies_minus.gif</filename>
-            <filename>assets/images/dhtmlgoodies_plus.gif</filename>
-            <filename>assets/images/double.gif</filename>
-            <filename>assets/images/expandall.png</filename>
-            <filename>assets/images/float.gif</filename>
-            <filename>assets/images/integer.gif</filename>
-            <filename>assets/images/locked.png</filename>
-            <filename>assets/images/message.gif</filename>
-            <filename>assets/images/method.gif</filename>
-            <filename>assets/images/methods.gif</filename>
-            <filename>assets/images/null.gif</filename>
-            <filename>assets/images/object.gif</filename>
-            <filename>assets/images/properties.gif</filename>
-            <filename>assets/images/refresh.png</filename>
-            <filename>assets/images/resource.gif</filename>
-            <filename>assets/images/string.gif</filename>
-            <filename>assets/images/unlocked.png</filename>
-
-            <filename>assets/js/folder-tree-static.js</filename>
-
-            <filename>models/about.php</filename>
-            <filename>models/tree.php</filename>
-
-            <filename>views/about/view.html.php</filename>
-            <filename>views/about/tmpl/default.php</filename>
-            <filename>views/tree/view.html.php</filename>
-            <filename>views/tree/tmpl/default.php</filename>
+            <folder>assets</folder>
+            <folder>models</folder>
+            <folder>views</folder>
         </files>
         <menu>J!Dump</menu>
     </administration>
