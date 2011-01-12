@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="component" method="upgrade">
-    <name>J!Dump</name>
+    <name>Dump</name>
     <author>Mathias Verraes</author>
     <creationDate>January 2011</creationDate>
     <copyright>(c) Mathias Verraes 2006 - 2011</copyright>
