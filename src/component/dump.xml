@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="component">
-    <name>Dump</name>
-    <author>J!Dump Team</author>
+    <name>J!Dump</name>
+    <author>Mathias Verraes</author>
     <creationDate>January 2011</creationDate>
-    <copyright>(c) J!Dump Team 2006 - 2011</copyright>
+    <copyright>(c) Mathias Verraes 2006 - 2011</copyright>
     <license>GNU/GPL</license>
     <authorEmail></authorEmail>
     <authorUrl>http://joomlacode.org/gf/project/jdump/</authorUrl>
-    <version>1.1.3</version>
+    <version>1.6.0</version>
     <description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
     <files folder="site">
         <filename>dump.php</filename>
@@ -16,7 +16,7 @@
     </files>
     <administration>
         <files folder="admin">
-            <filename>admin.dump.php</filename>
+            <filename>dump.php</filename>
             <filename>config.xml</filename>
             <filename>controller.php</filename>
             <filename>defines.php</filename>

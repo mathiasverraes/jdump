@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="plugin" group="system">
 	<name>J!Dump</name>
-	<author>J!Dump Team</author>
+	<author>Mathias Verraes</author>
 	<creationDate>January 2011</creationDate>
-	<copyright>(c) J!Dump Team 2006 - 2011</copyright>
+	<copyright>(c) Mathias Verraes 2006 - 2011</copyright>
 	<license>GNU/GPL</license>
 	<authorEmail></authorEmail>
 	<authorUrl>http://joomlacode.org/gf/project/jdump/</authorUrl>
-	<version>1.1.3</version>
+	<version>1.6.0</version>
 	<description>J!Dump Plugin -- This plugin requires the J!Dump component to function. Don't forget to publish this plugin!</description>
 	<files>
 		<filename plugin="dump">dump.php</filename>

@@ -2,8 +2,8 @@
 /**
  * J!Dump
  * @version      $Id$
- * @package      mjaztools_dump
- * @copyright    Copyright (C) 2007 J!Dump Team. All rights reserved.
+ * @package      jdump
+ * @copyright    Copyright (C) 2007 Mathias Verraes. All rights reserved.
  * @license      GNU/GPL
  * @link         http://joomlacode.org/gf/project/jdump/
  */
@@ -15,7 +15,7 @@ if( file_exists( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.ph
     require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.php' );
     require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'defines.php' );
 } else {
-    JError::raiseNotice( 20, 'The Dump Plugin needs the Dump Component to function.' );
+    JError::raiseNotice( 20, 'The J!Dump Plugin needs the J!Dump Component to function.' );
 }
 
 class plgSystemDump extends JPlugin {

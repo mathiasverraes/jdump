@@ -1,8 +1,8 @@
 /**
  * J!Dump
  * @version      $Id$
- * @package      mjaztools_dump
- * @copyright    Copyright (C) 2007 J!Dump Team. All rights reserved.
+ * @package      jdump
+ * @copyright    Copyright (C) 2006-2011 Mathias Verraes. All rights reserved.
  * @license      GNU/GPL
  * @link         http://joomlacode.org/gf/project/jdump/
  */
