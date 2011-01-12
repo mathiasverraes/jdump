@@ -21,16 +21,6 @@ class DumpViewAbout extends JView {
         $bar->appendButton( 'Popup', 'default', 'Popup', "index.php?option=com_dump&view=tree&closebutton=0" );
         JToolBarHelper::preferences( 'com_dump', '300' );
 
-
-/** Not needed here, DumpViewAbout is only used in the administrator
-        // we need to add these paths so the component can work in both site and administrator
-        $this->addTemplatePath( dirname(__FILE__) . DS . 'tmpl' );
-*/
-
-
-        $this->assignRef( 'readme', $this->get( 'readme' ) );
-        $this->assignRef( 'installation', $this->get( 'installation' ) );
-
         parent::display($tpl);
     }
 }

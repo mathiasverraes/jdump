@@ -11,7 +11,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.utilities.array' );
 
-class DumpSysinfo extends JObject {
+class DumpSysinfo extends JObject
+{
     var $data = array();
 
     function __construct() {
@@ -33,7 +34,7 @@ class DumpSysinfo extends JObject {
     }
 
     function _loadDefined() {
-        switch ( DUMP_PHP ) {
+        switch ( intval($phpversion[0]) ) {
             case 4:
                 $this->data['All Defined Constants'] = get_defined_constants();
                    break;
