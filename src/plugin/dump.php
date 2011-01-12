@@ -48,7 +48,7 @@ class plgSystemDump extends JPlugin {
 function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 ) {
     $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
-    include_once( JPATH_PLUGINS.DS.'system'.DS.'dump' .DS. 'dump'.DS.'node.php' );
+    require_once JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'node.php';
 
 		$source = '';
 		if (function_exists('debug_backtrace'))
@@ -91,7 +91,7 @@ function dumpMessage( $msg = '(Empty message)' ) {
  * Shortcut to dump system information
  */
 function dumpSysinfo() {
-    include_once( JPATH_PLUGINS.DS.'system'.DS.'dump'.DS.'sysinfo.php' );
+    require_once JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'sysinfo.php';
     $sysinfo = new DumpSysinfo();
     dump( $sysinfo->data, 'System Information');
 }

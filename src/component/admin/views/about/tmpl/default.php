@@ -22,10 +22,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
                 <legend>Installation</legend>
                 <div style="font-family:courier"><?php echo $this->installation?></div>
             </fieldset>
-            <fieldset class="adminform">
-                <legend>Changelog</legend>
-                <div style="font-family:courier"><?php echo $this->changelog?></div>
-            </fieldset>
         </td>
     </tr>
 </table>

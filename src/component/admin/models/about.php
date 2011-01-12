@@ -35,9 +35,7 @@ class DumpModelAbout extends JModel {
     function & getReadme() {
         return $this->_getFile( 'readme.php' );
     }
-    function & getChangelog() {
-        return $this->_getFile( 'changelog.php' );
-    }
+
     function & getInstallation() {
         return $this->_getFile( 'installation.php' );
     }

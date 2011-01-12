@@ -11,8 +11,6 @@
 	<description>J!Dump Plugin -- This plugin requires the J!Dump component to function. Don't forget to publish this plugin!</description>
 	<files>
 		<filename plugin="dump">dump.php</filename>
-		<filename>dump/node.php</filename>
-		<filename>dump/sysinfo.php</filename>
 	</files>
 	<params>
 	</params>

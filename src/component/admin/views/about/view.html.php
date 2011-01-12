@@ -28,10 +28,8 @@ class DumpViewAbout extends JView {
 */
 
 
-        $files = array( 'readme', 'changelog', 'installation' );
-        foreach( $files as $file ) {
-            $this->assignRef( $file, $this->get( $file ) );
-        }
+        $this->assignRef( 'readme', $this->get( 'readme' ) );
+        $this->assignRef( 'installation', $this->get( 'installation' ) );
 
         parent::display($tpl);
     }
