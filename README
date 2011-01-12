@@ -1,6 +1,0 @@
-Building packages:
-
-- Install phing using PEAR http://phing.info/
-- Copy config.ini.dist to config.ini and edit it
-- Run 'phing' in this folder
-- The packages are now in /build/packages

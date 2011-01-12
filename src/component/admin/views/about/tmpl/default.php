@@ -9,6 +9,10 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
+<style>
+p, li { font-size: 14px;margin: 10px;}
+code { font-size: 14px; color: white; background-color:black; margin-bottom: 26px;margin-left:15px; padding: 5px;}
+</style>
 
 <h1>J!Dump v<?php echo DUMP_VERSION?></h1>
 
