@@ -10,10 +10,11 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
 <style>
-p, li { font-size: 14px;margin: 10px;}
-code { font-size: 14px; color: white; background-color:black; margin-bottom: 26px;margin-left:15px; padding: 5px;}
+.jdump p, .jdump li { font-size: 14px;margin: 10px;}
+.jdump code { font-size: 14px; color: white; background-color:black; margin-bottom: 26px;margin-left:15px; padding: 5px;}
 </style>
 
+<div class="jdump">
 <h1>J!Dump v<?php echo DUMP_VERSION?></h1>
 
 <p>Advanced print_r and var_dump replacer with DHTML tree display.</p>
@@ -68,3 +69,4 @@ Mathias Verraes (Lead)</li>
 <h2>Credits</h2>
 <p>This component includes Folder Tree Static by Alf Magne Kalleland. It is released under LGPL and can be found at http://www.dhtmlgoodies.com/</p>
 
+</div>
