@@ -33,7 +33,9 @@ class DumpSysinfo extends JObject
         $this->data['Joomla Configuration'] = JArrayHelper::fromObject( $jconf );
     }
 
-    function _loadDefined() {
+    function _loadDefined()
+    {
+    	$phpversion = phpversion();
         switch ( intval($phpversion[0]) ) {
             case 4:
                 $this->data['All Defined Constants'] = get_defined_constants();
@@ -59,13 +61,13 @@ class DumpSysinfo extends JObject
     }
 
     function _loadEnvironment(){
-        $this->data['Environment']['_SERVER']		= & $_SERVER;
-        $this->data['Environment']['_GET']			= & $_GET;
-        $this->data['Environment']['_POST']			= & $_POST;
-        $this->data['Environment']['_COOKIE']		= & $_COOKIE;
-        $this->data['Environment']['_FILES']		= & $_FILES;
-        $this->data['Environment']['_ENV']			= & $_ENV;
-        $this->data['Environment']['_REQUEST']		= & $_REQUEST;
+        $this->data['Environment']['_SERVER']		=  $_SERVER;
+        $this->data['Environment']['_GET']			=  $_GET;
+        $this->data['Environment']['_POST']			=  $_POST;
+        $this->data['Environment']['_COOKIE']		=  $_COOKIE;
+        $this->data['Environment']['_FILES']		=  $_FILES;
+        $this->data['Environment']['_ENV']			=  $_ENV;
+        $this->data['Environment']['_REQUEST']		=  $_REQUEST;
     }
 
     // recursive natural key sort

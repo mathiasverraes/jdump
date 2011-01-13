@@ -33,7 +33,7 @@ class plgSystemDump extends JPlugin {
         $userstate = $mainframe->getUserState( 'dump.nodes' );
         $cnt_dumps  = count( $userstate );
 
-        if( $autopopup AND $cnt_dumps) {
+        if( $autopopup && $cnt_dumps) {
             DumpHelper::showPopup();
         }
     }
@@ -45,7 +45,8 @@ class plgSystemDump extends JPlugin {
  * @param mixed $var The variable you want to dump
  * @param mixed $name The name of the variable you want to dump
  */
-function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 ) {
+function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
+{
     $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
     require_once JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'node.php';
