@@ -23,7 +23,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <p>This utility makes life easy for developers and template designers. You use it to see what's inside a variable, an array or an object. Instead of using print_r() or var_dump(), you can now use dump(). This will open a popup window with a nice expandable DHTML tree, showing the contents of the variable. It will even show a list of available methods for each object. You can use dump() in your extensions, in the core, in libraries and even in templates.</p>
 
 <h2>Installation</h2>
-<p>Install the component and the plugin. Make sure the plugin is published.</p>
+<p>Install both the component and the plugin. Make sure the plugin is published.</p>
 
 <p>If you don't want the dump popup window to appear automatically, you can disable it in the configuration. To display the dump window manually:</p>
 <ul><li>Administrator: Go to Components -> J!Dump and click Popup.</li>
@@ -59,7 +59,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 <h2>Contributors</h2>
 <ul><li>
-Mathias Verraes (Lead)</li>
+Mathias Verraes (Lead) - <a href="http://twitter.com/mathiasverraes">Follow @mathiasverraes on Twitter</a></li>
 <li>Jens-Christian Skibakk</li>
 <li>Tom Fuller</li>
 </ul>

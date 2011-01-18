@@ -7,7 +7,7 @@
     <license>GNU/GPL</license>
     <authorEmail></authorEmail>
     <authorUrl>http://joomlacode.org/gf/project/jdump/</authorUrl>
-    <version>1.2.0</version>
+    <version>1.2.0.BETA</version>
     <description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
     <files folder="site">
         <filename>dump.php</filename>
