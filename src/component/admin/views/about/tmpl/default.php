@@ -89,8 +89,6 @@ div.green {background-color: #7fb01d;}
 			<li>This component is only meant to be used on development test
 			sites, NOT in live or production environments. If you must use it on a
 			live site, don't do stupid things like dump($password) !</li>
-			<li>This component was tested with Joomla! v1.5 beta (using the
-			latest nightly builds).</li>
 			<li>You can't use dump() in system plugins that are run before the
 			J!Dump plugin is run, so it is best to use ordering in the plugin
 			manager to put J!Dump upfront.</li>
