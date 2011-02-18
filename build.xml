@@ -2,7 +2,7 @@
 <project name="J!Dump" basedir="." default="build" description="Build J!Dump packages">
 
 	<target name="init" description="Initialize" depends="clean">
-		<property file="config.ini"  override="false" />
+		<property file="VERSION"  override="false" />
 		<mkdir dir="build" />
 	</target>
 
@@ -12,8 +12,13 @@
 	
 	<target name="build" description="Build installable package" depends="init">
 		<mkdir dir="build/packages" />
-		<tar destfile="build/packages/jdump_component_v${version}.tar.gz" basedir="src/component" compression="gzip" />
-		<tar destfile="build/packages/jdump_plugin_v${version}.tar.gz" basedir="src/plugin" compression="gzip" />
+		<mkdir dir="build/packages/unzip_first" />
+		<zip destfile="build/packages/unzip_first/jdump_component_v${version}.zip" basedir="src/component"  />
+		<zip destfile="build/packages/unzip_first/jdump_plugin_v${version}.zip" basedir="src/plugin"  />
+		<copy file="README" tofile="build/packages/unzip_first/README" overwrite="true"/>
+		<copy file="VERSION" tofile="build/packages/unzip_first/VERSION" overwrite="true"/>
+		<zip destfile="build/packages/unzip_first_jdump_v${version}.zip" basedir="build/packages/unzip_first"  />
+		<delete dir="build/packages/unzip_first" includeemptydirs="true" />
 	</target>
 
 	
