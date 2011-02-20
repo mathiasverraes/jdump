@@ -19,6 +19,12 @@ extensions, in the core, in libraries and even in templates.
 in live or production environments. If you must use it on a live site, don't do 
 stupid things like dump($password) !
 
+Download
+--------
+
+- Download ready-made packages from http://joomlacode.org/gf/project/jdump/frs/
+- ...or make your own with Phing
+
 
 Installation
 ------------
