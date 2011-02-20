@@ -1,6 +1,5 @@
-J!Dump %%VERSION%% README
-===============================
-(%%TODAY%%)
+J!Dump README
+=============
 
 Advanced print_r and var_dump replacer with object tree display.
 
