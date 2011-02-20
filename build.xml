@@ -59,8 +59,13 @@
 	
 	<target name="package" description="Package the whole shebang" depends="package-plugin, package-component">
 		<mkdir dir="build/packages/tmp" />
-		<copy file="README.rst" tofile="build/packages/tmp/README" overwrite="true"/>
-		<copy file="VERSION" tofile="build/packages/tmp/VERSION" overwrite="true"/>
+		<copy todir="build/packages/tmp" >
+			<fileset dir="./">
+				<include name="README.rst" />
+				<include name="VERSION" />
+			</fileset>
+			<filterchain refid="replacer" />
+		</copy>
 		<move file="build/packages/plg_system_dump_v${version}.zip" tofile="build/packages/tmp/plg_system_dump_v${version}.zip" overwrite="true"/>
 		<move file="build/packages/com_dump_v${version}.zip" tofile="build/packages/tmp/com_dump_v${version}.zip" overwrite="true"/>
 		<zip destfile="build/packages/unzip_first_jdump_v${version}.zip" basedir="build/packages/tmp" />
