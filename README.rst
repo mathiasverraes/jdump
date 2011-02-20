@@ -78,10 +78,11 @@ You can't use dump() in system plugins that are run before the J!Dump plugin is 
 Contributors
 -------------
 
-Mathias Verraes (Lead)
-Jens-Christian Skibakk
-Tom Fuller
-Thanks to everybody who provided patches.
+- Mathias Verraes (Lead)
+- Jens-Christian Skibakk
+- Tom Fuller
+
+Thanks to everybody who provided patches!
 
 License
 -------
