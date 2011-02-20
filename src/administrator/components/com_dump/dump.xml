@@ -2,19 +2,19 @@
 <install version="1.5" type="component" method="upgrade">
     <name>Dump</name>
     <author>Mathias Verraes</author>
-    <creationDate>January 2011</creationDate>
+    <creationDate>%%TODAY%%</creationDate>
     <copyright>(c) Mathias Verraes 2006 - 2011</copyright>
     <license>GNU/GPL</license>
     <authorEmail></authorEmail>
     <authorUrl>http://joomlacode.org/gf/project/jdump/</authorUrl>
-    <version>1.2.0.BETA2</version>
+    <version>%%VERSION%%</version>
     <description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
-    <files folder="site">
+    <files folder="components/com_dump">
         <filename>dump.php</filename>
         <folder>views</folder>
     </files>
     <administration>
-        <files folder="admin">
+        <files folder="administrator/components/com_dump">
             <filename>config.xml</filename>
             <filename>controller.php</filename>
             <filename>defines.php</filename>

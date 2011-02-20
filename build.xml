@@ -1,25 +1,70 @@
 <?xml version="1.0" ?>
-<project name="J!Dump" basedir="." default="build" description="Build J!Dump packages">
+<project name="J!Dump" basedir="." default="package" description="Build J!Dump packages">
 
 	<target name="init" description="Initialize" depends="clean">
 		<property file="VERSION"  override="false" />
+		<tstamp/>
 		<mkdir dir="build" />
+		
+		<filterchain id="replacer">
+			<replacetokens begintoken="%%" endtoken="%%">
+				<token key="VERSION" value="${version}"/>
+			</replacetokens>
+			<replacetokens begintoken="%%" endtoken="%%">
+				<token key="TODAY" value="${TODAY}"/>
+			</replacetokens>
+		</filterchain>
 	</target>
 
 	<target name="clean" description="Cleanup">
 		<delete dir="build" includeemptydirs="true" />
 	</target>
-	
-	<target name="build" description="Build installable package" depends="init">
+
+
+	<target name="package-component" description="Build the component package" depends="init">
 		<mkdir dir="build/packages" />
-		<mkdir dir="build/packages/unzip_first" />
-		<zip destfile="build/packages/unzip_first/jdump_component_v${version}.zip" basedir="src/component"  />
-		<zip destfile="build/packages/unzip_first/jdump_plugin_v${version}.zip" basedir="src/plugin"  />
-		<copy file="README" tofile="build/packages/unzip_first/README" overwrite="true"/>
-		<copy file="VERSION" tofile="build/packages/unzip_first/VERSION" overwrite="true"/>
-		<zip destfile="build/packages/unzip_first_jdump_v${version}.zip" basedir="build/packages/unzip_first"  />
-		<delete dir="build/packages/unzip_first" includeemptydirs="true" />
+		<mkdir dir="build/packages/tmp" />
+
+		<copy todir="build/packages/tmp" >
+			<fileset dir="./src/">
+				<include name="administrator/**" />
+				<include name="components/**" />
+				<!-- 
+				 <include name="media/**" />
+				 -->
+			</fileset>
+			<filterchain refid="replacer" />
+		</copy>		
+		<move file="build/packages/tmp/administrator/components/com_dump/dump.xml" tofile="build/packages/tmp/dump.xml" />
+		
+		<zip destfile="build/packages/com_dump_v${version}.zip" basedir="build/packages/tmp" />
+		<delete dir="build/packages/tmp" includeemptydirs="true" />
 	</target>
 
+	<target name="package-plugin" description="Build the plugin package" depends="init">
+		<mkdir dir="build/packages" />
+		<mkdir dir="build/packages/tmp" />
+
+		<copy todir="build/packages/tmp" >
+			<fileset dir="./src/plugins/">
+				<include name="system/dump/**" />
+			</fileset>
+			<filterchain refid="replacer" />
+		</copy>		
+
+		<zip destfile="build/packages/plg_system_dump_v${version}.zip" basedir="build/packages/tmp/system/dump" />
+		
+		<delete dir="build/packages/tmp" includeemptydirs="true" />
+	</target>
+	
+	<target name="package" description="Package the whole shebang" depends="package-plugin, package-component">
+		<mkdir dir="build/packages/tmp" />
+		<copy file="README.rst" tofile="build/packages/tmp/README" overwrite="true"/>
+		<copy file="VERSION" tofile="build/packages/tmp/VERSION" overwrite="true"/>
+		<move file="build/packages/plg_system_dump_v${version}.zip" tofile="build/packages/tmp/plg_system_dump_v${version}.zip" overwrite="true"/>
+		<move file="build/packages/com_dump_v${version}.zip" tofile="build/packages/tmp/com_dump_v${version}.zip" overwrite="true"/>
+		<zip destfile="build/packages/unzip_first_jdump_v${version}.zip" basedir="build/packages/tmp" />
+		<delete dir="build/packages/tmp" includeemptydirs="true" />
+	</target>
 	
 </project>
