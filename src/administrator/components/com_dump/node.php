@@ -29,6 +29,7 @@ class DumpNode {
                 if ( $level >= DumpHelper::getMaxDepth() ) {
                     $node['children'][] = & DumpNode::getNode( 'Maximum depth reached', null, 'message' );
                 } else {
+                	ksort($var);
                     foreach ( $var as $key => $value ) {
                         $node['children'][] = & DumpNode::getNode( $value, $key, null, $level + 1 );
                     }
@@ -52,7 +53,8 @@ class DumpNode {
                 break;
 
             case 'properties':
-                $object_vars = get_object_vars( $var ) ;
+                $object_vars = get_object_vars( $var );
+                ksort($object_vars);
                 foreach ( $object_vars as $key => $value ) {
                     $node['children'][] = & DumpNode::getNode( $value, $key, null, $level + 1 );
                 }
@@ -60,6 +62,7 @@ class DumpNode {
 
             case 'methods':
                 $methods = get_class_methods( $var ) ;
+                sort($methods);
                 foreach ( $methods as $value ) {
                     $node['children'][] = & DumpNode::getNode( null, $value, 'method' );
                 }
