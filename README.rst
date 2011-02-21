@@ -44,6 +44,7 @@ Anywhere in your code, type:
 
 ::
 	
+	<?php
 	dump($variable, 'Variable Name');
 
 Simple huh? 'Variable Name' is optional and can be anything you like. If you use a lot of dumps, you'll want to use some descriptive names.
