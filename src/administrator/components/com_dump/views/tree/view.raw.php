@@ -266,7 +266,7 @@ class DumpViewTree extends JView
             $tooltip  = '<span class="tool-title">Source</span><br />';
             $tooltip .= '<span class="tool-text">' . $node['source'] . '</span>';
             $tooltip  = htmlspecialchars($tooltip);
-            $output  .= '&nbsp;<span class="hasTip" width="600px" title="'.$tooltip.'"><img src="'.JURI::root(true).'/includes/js/ThemeOffice/content.png" alt="Tooltip" border="0" width="12" height="12" /></span>';
+            $output  .= '&nbsp;<span class="hasTip" width="600px" title="'.$tooltip.'"><img src="'.DUMP_URL.'assets/images/content.png" alt="Tooltip" border="0" width="12" height="12" /></span>';
 
         }
 
