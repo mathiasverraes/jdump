@@ -5,7 +5,7 @@
  * @package      jdump
  * @copyright    Copyright (C) 2006-2011 Mathias Verraes. All rights reserved.
  * @license      GNU/GPL
- * @link         http://joomlacode.org/gf/project/jdump/
+ * @link         https://github.com/mathiasverraes/jdump
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
@@ -24,7 +24,7 @@ class DumpHelper extends JObject {
         $h          = $dumpConfig->get( 'popupheight', 500 );
 
         // build the url
-        $url = JURI::base(true).'/index.php?option=com_dump&view=tree&tmpl=component';
+        $url = JURI::base(true).'/index.php?option=com_dump&view=tree&format=raw';
 
         /* @TODO remove this and implement this in a later version using JRoute
         // only add Itemid in Site

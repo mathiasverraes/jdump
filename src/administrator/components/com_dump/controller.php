@@ -5,7 +5,7 @@
  * @package      jdump
  * @copyright    Copyright (C) 2006-2011 Mathias Verraes. All rights reserved.
  * @license      GNU/GPL
- * @link         http://joomlacode.org/gf/project/jdump/
+ * @link         https://github.com/mathiasverraes/jdump
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 

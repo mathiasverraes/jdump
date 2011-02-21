@@ -5,7 +5,7 @@
  * @package      jdump
  * @copyright    Copyright (C) 2006-2011 Mathias Verraes. All rights reserved.
  * @license      GNU/GPL
- * @link         http://joomlacode.org/gf/project/jdump/
+ * @link         https://github.com/mathiasverraes/jdump
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 ?>
@@ -109,7 +109,7 @@ div.green {background-color: #7fb01d;}
 	<div class="box blue">
 		<h2>Bugs</h2>
 		<p>Found some bugs? <a
-			href="http://joomlacode.org/gf/project/jdump/tracker/">To the
+			href="https://github.com/mathiasverraes/jdumptracker/">To the
 		Bugmobile!</a> Be a <a
 			href="http://stephenjungels.com/jungels.net/articles/diff-patch-ten-minutes.html">good
 		boy or girl</a> and add a patch yourself :-) Ideas and feature requests are welcome as well.</p>
