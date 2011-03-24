@@ -15,7 +15,8 @@ class DumpSysinfo extends JObject
 {
     var $data = array();
 
-    function __construct() {
+    function __construct()
+    {
         // execute all methods that start with '_load'
         foreach( get_class_methods( $this ) as $method ) {
             if( '_load' == substr( $method, 0, 5 ) ) {
@@ -25,7 +26,8 @@ class DumpSysinfo extends JObject
         $this->sort( $this->data );
     }
 
-    function _loadConfig() {
+    function _loadConfig()
+    {
         $jconf                  = new JConfig();
         $jconf->password        = '*******';
         $jconf->ftp_pass        = '*******';
@@ -33,34 +35,18 @@ class DumpSysinfo extends JObject
         $this->data['Joomla Configuration'] = JArrayHelper::fromObject( $jconf );
     }
 
-    function _loadDefined()
+    function _loadVersions()
     {
-    	$phpversion = phpversion();
-        switch ( intval($phpversion[0]) ) {
-            case 4:
-                $this->data['All Defined Constants'] = get_defined_constants();
-                   break;
-            case 5:
-                $this->data['All Defined Constants'] = get_defined_constants(true);
-                break;
-        }
-    }
-
-    function _loadVersions() {
         $version = new JVersion();
         $this->data['Versions']['Joomla!']        = $version->getLongVersion();
         $this->data['Versions']['J!Dump'] = DUMP_VERSION;
         $this->data['Versions']['PHP']            = phpversion();
-        $this->data['Versions']['Apache']         = apache_get_version();
+        $this->data['Versions']['Apache']         = function_exists('apache_get_versiona') ? apache_get_version() : 'unknown';
         $this->data['Versions']['Zend Engine']    = zend_version();
     }
 
-    function _loadPhp(){
-        $this->data['PHP']['Version']				= phpversion();
-        $this->data['PHP']['Loaded Extensions']		= get_loaded_extensions();
-    }
-
-    function _loadEnvironment(){
+    function _loadEnvironment()
+    {
         $this->data['Environment']['_SERVER']		=  $_SERVER;
         $this->data['Environment']['_GET']			=  $_GET;
         $this->data['Environment']['_POST']			=  $_POST;
