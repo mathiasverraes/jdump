@@ -31,9 +31,11 @@ Download
 Installation
 ------------
 
-Install both the component and the plugin. Make sure the plugin is published. But you probably figured that out already.
+Install both the component and the plugin. Make sure the plugin is published. But 
+you probably figured that out already.
 
-If you don't want the dump popup window to appear automatically, you can disable it in the configuration. To display the dump window manually:
+If you don't want the dump popup window to appear automatically, you can disable 
+it in the configuration. To display the dump window manually:
 
 - **Administrator**: Go to Components -> J!Dump and click Popup.
 - **Site**: Make a new menu item for J!Dump. Set it to 'Open in New Window'
@@ -49,7 +51,8 @@ Anywhere in your code, type:
 	<?php
 	dump($variable, 'Variable Name');
 
-Simple huh? 'Variable Name' is optional and can be anything you like. If you use a lot of dumps, you'll want to use some descriptive names.
+Simple huh? 'Variable Name' is optional and can be anything you like. If you use 
+a lot of dumps, you'll want to use some descriptive names.
 
 Shortcuts
 ---------
@@ -81,7 +84,8 @@ Shortcuts
 Notes
 -----
 
-You can't use dump() in system plugins that are run before the J!Dump plugin is run, so it is best to use ordering in the plugin manager to put J!Dump upfront.
+You can't use dump() in system plugins that are run before the J!Dump plugin is run, 
+so it is best to use ordering in the plugin manager to put J!Dump upfront.
 
 
 Contributors
@@ -101,4 +105,5 @@ J!Dump is licensed as GNU/GPL v2.
 Credits
 -------
 
-This component includes Folder Tree Static by Alf Magne Kalleland. It is released under LGPL and can be found at http://www.dhtmlgoodies.com/
+This component includes Folder Tree Static by Alf Magne Kalleland. It is released 
+under LGPL and can be found at http://www.dhtmlgoodies.com/

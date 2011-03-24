@@ -25,6 +25,9 @@ div.green {background-color: #7fb01d;}
 <div class="jdump">
 	<div class="box orange">
 		<p>Advanced print_r and var_dump replacer with object tree display.</p>
+		<p>The J!Dump project is now officially hosted on <a href="https://github.com/mathiasverraes/jdump">https://github.com/mathiasverraes/jdump</a></p>
+		<p><a href="http://extensions.joomla.org/extensions/miscellaneous/development/1509">Vote for this extension at the JED</a></p>
+
 	</div>
 
 	<div class="box blue">
@@ -109,7 +112,7 @@ div.green {background-color: #7fb01d;}
 	<div class="box blue">
 		<h2>Bugs</h2>
 		<p>Found some bugs? <a
-			href="https://github.com/mathiasverraes/jdumptracker/">To the
+			href="https://github.com/mathiasverraes/jdump/issues">To the
 		Bugmobile!</a> Be a <a
 			href="http://stephenjungels.com/jungels.net/articles/diff-patch-ten-minutes.html">good
 		boy or girl</a> and add a patch yourself :-) Ideas and feature requests are welcome as well.</p>
