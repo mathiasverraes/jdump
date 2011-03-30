@@ -41,7 +41,7 @@ class DumpSysinfo extends JObject
         $this->data['Versions']['Joomla!']        = $version->getLongVersion();
         $this->data['Versions']['J!Dump'] = DUMP_VERSION;
         $this->data['Versions']['PHP']            = phpversion();
-        $this->data['Versions']['Apache']         = function_exists('apache_get_versiona') ? apache_get_version() : 'unknown';
+        $this->data['Versions']['Apache']         = function_exists('apache_get_version') ? apache_get_version() : 'unknown';
         $this->data['Versions']['Zend Engine']    = zend_version();
     }
 
