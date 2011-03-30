@@ -55,45 +55,45 @@ class DumpNode {
                        case 'properties':
                 $object_vars = get_object_vars( $var ) ;
                 foreach ( $object_vars as $key => $value ) {
-                    $node['children'][] = & DumpNode::getNode( $value,
-$key, null, $level + 1 );
+                    $node['children'][] = & DumpNode::getNode( $value, $key, null, $level + 1 );
                 }
                 // getter-based properties
                 $methods = get_class_methods( $var ) ;
-                foreach ( $methods as $name ) {
-                      if( 4 <= strlen($name) && 0 == strncmp('get',
-$name, 3) && ctype_upper($name[3]) ) {
-                           $child = & DumpNode::getNode( $var, $name,
-'getter', $level + 1 );
-                           if( $child )
+                foreach ( $methods as $name )
+                {
+                      if( 4 <= strlen($name) && 0 == strncmp('get', $name, 3) && ctype_upper($name[3]) )
+                      {
+                           $child = & DumpNode::getNode( $var, $name, 'getter', $level + 1 );
+                           if( $child ) {
                               $node['children'][] = & $child;
+                           }
                       }
                 }
                 break;
 
             case 'getter':
                 $property = substr( $name, 3 );
-                if( 2 <= strlen($property) && !ctype_upper($property[1]) )
+                if( 2 <= strlen($property) && !ctype_upper($property[1]) ) {
                     $property[0] = strtolower( $property[0] );
-                if( property_exists($var, $property) ||
-property_exists($var, '_'.$property) )
+                }
+                if( property_exists($var, $property) || property_exists($var, '_'.$property) ) {
                     return false;  // no duplicate entry for getters
-                  $getter = new ReflectionMethod( $var, $name );
+                }
+                $getter = new ReflectionMethod( $var, $name );
                 if( 0 == $getter->getNumberOfRequiredParameters() ) {
                        try {
                          $value = call_user_func( array($var, $name) );
                        } catch(Exception $e) {
                            $value = $e->getMessage();
                        }
-                    $node = & DumpNode::getNode( $value, $property,
-null, $level );
+                    $node = & DumpNode::getNode( $value, $property, null, $level );
                 }
                 else {
                     $node['name'] = $property;
                     $node['value'] = null;
                     $node['type'] = 'unknown';
                 }
-                   break;
+                break;
 
             case 'methods':
                 $methods = get_class_methods( $var ) ;
