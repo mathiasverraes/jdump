@@ -11,7 +11,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class DumpNode {
 
-    function & getNode( $var, $name, $type = null, $level = 0, $source = null ) {
+    static function & getNode( $var, $name, $type = null, $level = 0, $source = null ) {
 
         $node['name']       = $name;
         $node['type']       = strtolower( $type ? $type : gettype( $var ) );
@@ -72,7 +72,7 @@ class DumpNode {
             case 'string':
 				jimport( 'joomla.application.component.helper' );
 				// settings from config.xml
-				$dumpConfig		= & JComponentHelper::getParams( 'com_dump' );
+				$dumpConfig		= JComponentHelper::getParams( 'com_dump' );
 				$trimstrings	= $dumpConfig->get( 'trimstrings', 1);
 				$maxstrlength	= $dumpConfig->get( 'maxstrlength', 150);
 
