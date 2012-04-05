@@ -23,17 +23,17 @@ class DumpController extends JController{
         $this->addModelPath( JPATH_COMPONENT_ADMINISTRATOR . DS . 'models' );
 
         // get some vars
-        $document   = & JFactory::getDocument();
+        $document   = JFactory::getDocument();
         $viewType   = $document->getType();
         $viewName	= JRequest::getCmd( 'view', 'about' );
         $viewLayout = JRequest::getCmd( 'layout', 'default' );
 
         // get the view & set the layout
-        $view       = & $this->getView( $viewName,  $viewType);
+        $view       = $this->getView( $viewName,  $viewType);
         $view->setLayout( $viewLayout );
 
         // Get/Create the model
-        if ( $model = & $this->getModel( $viewName ) ) {
+        if ( $model = $this->getModel( $viewName ) ) {
             // Push the model into the view (as default)
             $view->setModel( $model, true );
         }
