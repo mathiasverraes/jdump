@@ -12,14 +12,14 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class DumpHelper extends JObject {
 
-    function showPopup() {
-        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+    static function showPopup() {
+        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         jimport( 'joomla.application.helper' );
         $client     = JApplicationHelper::getClientInfo($mainframe->getClientID());
 
         // settings from config.xml
-        $dumpConfig = & JComponentHelper::getParams( 'com_dump' );
+        $dumpConfig = JComponentHelper::getParams( 'com_dump' );
         $w          = $dumpConfig->get( 'popupwidth', 500 );
         $h          = $dumpConfig->get( 'popupheight', 500 );
 
@@ -72,7 +72,7 @@ class DumpHelper extends JObject {
 */
 
 
-		function getSourceFunction(&$trace)
+		static function getSourceFunction(&$trace)
 		{
 				$function = '';
 
@@ -95,7 +95,7 @@ class DumpHelper extends JObject {
 				return "Function: $function<br />";
 		}
 
-		function getSourcePath(&$trace)
+		static function getSourcePath(&$trace)
 		{
 				$path = 'File: '.str_replace(JPATH_BASE.DS, '', $trace[0]['file'])
 				. '<br />'
@@ -105,11 +105,11 @@ class DumpHelper extends JObject {
 				return $path;
 		}
 
-    function & getMaxDepth() {
+    static function & getMaxDepth() {
         static $maxdepth = null;
 
         if ( !$maxdepth ) {
-            $dumpConfig         = & JComponentHelper::getParams( 'com_dump' );
+            $dumpConfig         = JComponentHelper::getParams( 'com_dump' );
             $maxdepth           = intval( $dumpConfig->get( 'maxdepth', 5 ) );
             if( $maxdepth > 20 ) $maxdepth=20;
             if( $maxdepth < 1  ) $maxdepth=1;
