@@ -47,7 +47,7 @@ class plgSystemDump extends JPlugin {
  */
 function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
 {
-    $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+    $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
     require_once JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'node.php';
 
@@ -62,7 +62,7 @@ function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
 		}
 
     // create a new node array
-    $node           = & DumpNode::getNode( $var, $name, $type, $level, $source );
+    $node           = DumpNode::getNode( $var, $name, $type, $level, $source );
     //get the current userstate
     $userstate      = $mainframe->getUserState( 'dump.nodes' );
     // append the node to the array
