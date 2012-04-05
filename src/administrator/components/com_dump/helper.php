@@ -12,7 +12,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class DumpHelper extends JObject {
 
-    function showPopup() {
+    static function showPopup() {
         $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         jimport( 'joomla.application.helper' );
@@ -72,7 +72,7 @@ class DumpHelper extends JObject {
 */
 
 
-		function getSourceFunction(&$trace)
+		static function getSourceFunction(&$trace)
 		{
 				$function = '';
 
@@ -95,7 +95,7 @@ class DumpHelper extends JObject {
 				return "Function: $function<br />";
 		}
 
-		function getSourcePath(&$trace)
+		static function getSourcePath(&$trace)
 		{
 				$path = 'File: '.str_replace(JPATH_BASE.DS, '', $trace[0]['file'])
 				. '<br />'
@@ -105,7 +105,7 @@ class DumpHelper extends JObject {
 				return $path;
 		}
 
-    function & getMaxDepth() {
+    static function & getMaxDepth() {
         static $maxdepth = null;
 
         if ( !$maxdepth ) {
