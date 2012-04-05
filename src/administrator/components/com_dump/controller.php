@@ -13,8 +13,8 @@ jimport('joomla.application.component.controller');
 
 class DumpController extends JController{
 
-    function display() {
-        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+    function display($cachable = false, $urlparams = false) {
+        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
         $Itemid = JRequest::getInt('Itemid');
         
 
