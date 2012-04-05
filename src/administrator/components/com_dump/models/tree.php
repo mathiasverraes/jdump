@@ -15,7 +15,7 @@ class DumpModelTree extends JModel {
     var $_nodes = array();
 
     function __construct() {
-        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         //get the userstate
         $this->_nodes = $mainframe->getUserState( 'dump.nodes' );
