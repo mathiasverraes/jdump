@@ -16,7 +16,7 @@ class DumpViewTree extends JView
 {
     function display($tpl = null)
     {
-        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         // we need to add these paths so the component can work in both site and administrator
         $this->addTemplatePath( dirname(__FILE__) . DS . 'tmpl' );
@@ -40,12 +40,12 @@ class DumpViewTree extends JView
     }
 
     function & renderTree() {
-        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         $output = '';
 
         // get the nodes from the model
-        $nodes =& $this->get('nodes');
+        $nodes = $this->get('nodes');
 
         // render the nodes to <ul><li...
         foreach ( $nodes as $node ) {
@@ -252,7 +252,7 @@ class DumpViewTree extends JView
     }
 
     function & renderSource( & $node ) {
-        $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
+        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         $params   = JComponentHelper::getParams('com_dump');
 
