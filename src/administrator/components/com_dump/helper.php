@@ -109,7 +109,7 @@ class DumpHelper extends JObject {
         static $maxdepth = null;
 
         if ( !$maxdepth ) {
-            $dumpConfig         = & JComponentHelper::getParams( 'com_dump' );
+            $dumpConfig         = JComponentHelper::getParams( 'com_dump' );
             $maxdepth           = intval( $dumpConfig->get( 'maxdepth', 5 ) );
             if( $maxdepth > 20 ) $maxdepth=20;
             if( $maxdepth < 1  ) $maxdepth=1;
