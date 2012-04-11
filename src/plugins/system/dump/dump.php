@@ -26,6 +26,10 @@ class plgSystemDump extends JPlugin {
     function onAfterRender() {
        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
+        if($option == 'com_dump'){
+            return;
+        }
+
         // settings from config.xml
         $dumpConfig = JComponentHelper::getParams( 'com_dump' );
         $autopopup  = $dumpConfig->get( 'autopopup', 1 );
