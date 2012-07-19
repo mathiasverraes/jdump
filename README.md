@@ -24,9 +24,16 @@ stupid things like dump($password) !
 Download
 --------
 
-- Download ready-made packages from http://joomlacode.org/gf/project/jdump/frs/
-- ...or make your own with Phing
+- [Download ready-made packages](https://github.com/mathiasverraes/jdump/downloads)
+- ...or make your own with [Phing](http://www.phing.info/trac/wiki/Users/Download)
 
+```shell
+git clone git://github.com/mathiasverraes/jdump.git
+cd jdump
+phing
+```
+
+The zip will be in the build/packages folder.
 
 Installation
 ------------

@@ -61,7 +61,7 @@
 		<mkdir dir="build/packages/tmp" />
 		<copy todir="build/packages/tmp" >
 			<fileset dir="./">
-				<include name="README.rst" />
+				<include name="README.md" />
 				<include name="VERSION" />
 			</fileset>
 			<filterchain refid="replacer" />
