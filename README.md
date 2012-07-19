@@ -13,7 +13,7 @@ Features
 This utility makes life easy for developers and template designers. You use it to 
 see what's inside a variable, an array or an object. Instead of using print_r() or 
 var_dump(), you can now use dump(). This will open a popup window with a nice expandable 
-DHTML tree, showing the contents of the variable. It will even show a list of available 
+tree, showing the contents of the variable. It will even show a list of available
 methods for each object. You have to see it to believe it! You can use dump() in your 
 extensions, in the core, in libraries and even in templates.
 
@@ -46,10 +46,9 @@ Using J!Dump
 
 Anywhere in your code, type:
 
-::
-	
-	<?php
-	dump($variable, 'Variable Name');
+```php
+dump($variable, 'Variable Name');
+```
 
 Simple huh? 'Variable Name' is optional and can be anything you like. If you use 
 a lot of dumps, you'll want to use some descriptive names.
@@ -57,29 +56,26 @@ a lot of dumps, you'll want to use some descriptive names.
 Shortcuts
 ---------
 
-::
-	
-	// Displays a whole bunch of system information.
-	dumpSysinfo();
+```php
+// Displays a whole bunch of system information.
+dumpSysinfo();
+```
 
+```php
+// Use inside a template's index.php to dump the parameters.
+dumpTemplate($this);
+```
 
-::
-	
-	// Use inside a template's index.php to dump the parameters.
-	dumpTemplate($this);
+```php
+// Displays a custom message. Very handy to check if a function or a loop is executed etc...
+dumpMessage('Your message');
+```
 
+```php
+// Displays the backtrace.
+dumpTrace();
+```
 
-::
-	
-	// Displays a custom message. Very handy to check if a function or a loop is executed etc...
-	dumpMessage('Your message');
-
-
-::
-	
-	// Displays the backtrace.
-	dumpTrace();
-	
 
 Notes
 -----
@@ -94,6 +90,7 @@ Contributors
 - Mathias Verraes (Lead)
 - Jens-Christian Skibakk
 - Tom Fuller
+- Thomas Hunziker
 
 Thanks to everybody who provided patches!
 
