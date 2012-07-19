@@ -19,7 +19,7 @@ class DumpViewTree extends JView
         $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         // we need to add these paths so the component can work in both site and administrator
-        $this->addTemplatePath( dirname(__FILE__) . DS . 'tmpl' );
+        $this->addTemplatePath( dirname(__FILE__) . '/tmpl' );
 
         // client information (site, administrator, ... )
         jimport( 'joomla.application.helper' );

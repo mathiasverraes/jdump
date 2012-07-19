@@ -97,7 +97,7 @@ class DumpHelper extends JObject {
 
 		static function getSourcePath(&$trace)
 		{
-				$path = 'File: '.str_replace(JPATH_BASE.DS, '', $trace[0]['file'])
+				$path = 'File: '.str_replace(JPATH_BASE.'/', '', $trace[0]['file'])
 				. '<br />'
 				. 'Line: '.$trace[0]['line']
                 . '<br />';
