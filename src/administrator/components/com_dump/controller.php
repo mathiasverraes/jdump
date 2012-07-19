@@ -9,9 +9,7 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-jimport('joomla.application.component.controller');
-
-class DumpController extends JController{
+class DumpController extends JControllerLegacy{
 
     function display($cachable = false, $urlparams = false) {
         $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');

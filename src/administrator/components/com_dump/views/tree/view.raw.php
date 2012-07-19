@@ -9,10 +9,9 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-jimport( 'joomla.application.component.view');
 JHTML::_('behavior.tooltip');
 
-class DumpViewTree extends JView
+class DumpViewTree extends JViewLegacy
 {
     function display($tpl = null)
     {

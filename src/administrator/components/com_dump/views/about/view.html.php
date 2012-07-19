@@ -9,9 +9,7 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-jimport( 'joomla.application.component.view');
-
-class DumpViewAbout extends JView {
+class DumpViewAbout extends JViewLegacy {
     function display($tpl = null) {
         $mainframe =& JFactory::getApplication(); $option = JRequest::getCmd('option');
 
