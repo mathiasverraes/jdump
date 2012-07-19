@@ -28,7 +28,7 @@ class DumpViewTree extends JViewLegacy
         JRequest::setVar( 'tmpl', 'component' );
 
         // render tree and assign to template
-        $tree =& $this->renderTree();
+        $tree = $this->renderTree();
         $this->assignRef('tree', $tree );
 
         $this->assignRef(	'application',	$client->name );

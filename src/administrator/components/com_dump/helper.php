@@ -55,8 +55,8 @@ class DumpHelper extends JObject {
 /* @TODO remove this and implement this in a later version using JRoute
     function getComponentItemid( $option ) {
         jimport('joomla.application.menu');
-        $menu = & JMenu::getInstance();
-        $components = & $menu->getItems( 'type', 'component' );
+        $menu = JMenu::getInstance();
+        $components = $menu->getItems( 'type', 'component' );
 
         $attribs['option'] = '';
         foreach( $components as $component ) {
