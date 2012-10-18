@@ -9,9 +9,7 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-jimport( 'joomla.application.component.model' );
-
-class DumpModelTree extends JModel {
+class DumpModelTree extends JModelLegacy {
     var $_nodes = array();
 
     function __construct() {
