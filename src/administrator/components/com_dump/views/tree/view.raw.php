@@ -12,10 +12,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport( 'joomla.application.component.view');
 JHTML::_('behavior.tooltip');
 
-class DumpViewTree extends JView
-{
-    function display($tpl = null)
-    {
+class DumpViewTree extends JViewLegacy {
+    function display($tpl = null) {
         $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
         // we need to add these paths so the component can work in both site and administrator
