@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install version="1.5" type="component" method="upgrade">
+<extension version="3.0" type="component" method="upgrade">
     <name>Dump</name>
     <author>Mathias Verraes</author>
     <creationDate>%%TODAY%%</creationDate>
@@ -29,4 +29,4 @@
         </files>
         <menu>J!Dump</menu>
     </administration>
-</install>
+</extension>
