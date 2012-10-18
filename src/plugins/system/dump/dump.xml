@@ -8,7 +8,12 @@
 	<authorEmail></authorEmail>
 	<authorUrl>https://github.com/mathiasverraes/jdump</authorUrl>
 	<version>%%VERSION%%</version>
-	<description>J!Dump Plugin -- This plugin requires the J!Dump component to function. Don't forget to publish this plugin!</description>
+	<description>
+	<![CDATA[
+		J!Dump Plugin -- This plugin requires the J!Dump component to function. 
+		Don't forget to <a href="index.php?option=com_plugins&view=plugins">publish this plugin!</a>
+	]]>
+	</description>
 	<files>
 		<filename plugin="dump">dump.php</filename>
 	</files>
