@@ -11,6 +11,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.event.helper' );
 
+//FIXME : not necessary 2.5, but it should be also in the Defines of Joomla in 3.0 ?
+if(version_compare(JVERSION,'3.0.0','>=')) define('DS', '/'); 
+
 if( file_exists( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.php' ) ) {
     require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.php' );
     require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'defines.php' );
