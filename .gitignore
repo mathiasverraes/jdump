@@ -3,3 +3,6 @@
 .settings/
 build/
 .DS_Store
+tmp/
+.idea/
+atlassian-ide-plugin.xml

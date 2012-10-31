@@ -18,6 +18,11 @@ if( file_exists( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' ) ) {
     JError::raiseNotice( 20, 'The J!Dump Plugin needs the J!Dump Component to function.' );
 }
 
+$version = new JVersion();
+if(!$version->isCompatible('2.5.5')) {
+    JError::raiseNotice( 20, 'J!Dump requires Joomla 2.5.5 or later. For older Joomla versions, please use https://github.com/downloads/mathiasverraes/jdump/unzip_first_jdump_v2012-10-08.zip');
+}
+
 class plgSystemDump extends JPlugin {
     function plgSystemDump(& $subject, $params) {
         parent::__construct($subject, $params);
