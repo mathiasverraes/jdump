@@ -11,13 +11,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 // use JPATH_COMPONENT_ADMINISTRATOR so we can use this in both site and administrator
 // Defines
-require_once( JPATH_COMPONENT_ADMINISTRATOR . DS . 'defines.php' );
+require_once( JPATH_COMPONENT_ADMINISTRATOR . '/defines.php' );
 // Require the base controller
-require_once( JPATH_COMPONENT_ADMINISTRATOR . DS . 'controller.php' );
+require_once( JPATH_COMPONENT_ADMINISTRATOR . '/controller.php' );
 
 // Require specific controller if requested
 if( $controller = JRequest::getCmd('controller') ) {
-    require_once ( JPATH_COMPONENT_ADMINISTRATOR . DS . 'controllers' . DS . $controller . '.php' );
+    require_once ( JPATH_COMPONENT_ADMINISTRATOR . '/controllers/' . $controller . '.php' );
 }
 
 // Create the controller

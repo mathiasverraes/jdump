@@ -27,26 +27,26 @@ class DumpNode {
 
             case 'array':
                 if ( $level >= DumpHelper::getMaxDepth() ) {
-                    $node['children'][] = & DumpNode::getNode( 'Maximum depth reached', null, 'message' );
+                    $node['children'][] = DumpNode::getNode( 'Maximum depth reached', null, 'message' );
                 } else {
                 	ksort($var);
                     foreach ( $var as $key => $value ) {
-                        $node['children'][] = & DumpNode::getNode( $value, $key, null, $level + 1 );
+                        $node['children'][] = DumpNode::getNode( $value, $key, null, $level + 1 );
                     }
                 }
                 break;
 
             case 'object':
                 if ( $level >= DumpHelper::getMaxDepth() ) {
-                    $node['children'][] = & DumpNode::getNode( 'Maximum depth reached', null, 'message' );
+                    $node['children'][] = DumpNode::getNode( 'Maximum depth reached', null, 'message' );
                 } else {
                     $object_vars = get_object_vars( $var ) ;
                     $methods     = get_class_methods( $var ) ;
                     if( count( $object_vars ) ) {
-                        $node['children'][] = & DumpNode::getNode( $var, 'Properties', 'properties', $level );
+                        $node['children'][] = DumpNode::getNode( $var, 'Properties', 'properties', $level );
                     }
                     if( count( $methods ) ) {
-                        $node['children'][] = & DumpNode::getNode( $var, 'Methods', 'methods', $level );
+                        $node['children'][] = DumpNode::getNode( $var, 'Methods', 'methods', $level );
                     }
                 }
                 $node['classname'] = get_class( $var );
@@ -56,7 +56,7 @@ class DumpNode {
                 $object_vars = get_object_vars( $var );
                 ksort($object_vars);
                 foreach ( $object_vars as $key => $value ) {
-                    $node['children'][] = & DumpNode::getNode( $value, $key, null, $level + 1 );
+                    $node['children'][] = DumpNode::getNode( $value, $key, null, $level + 1 );
                 }
                 break;
 
@@ -64,7 +64,7 @@ class DumpNode {
                 $methods = get_class_methods( $var ) ;
                 sort($methods);
                 foreach ( $methods as $value ) {
-                    $node['children'][] = & DumpNode::getNode( null, $value, 'method' );
+                    $node['children'][] = DumpNode::getNode( null, $value, 'method' );
                 }
                 break;
 

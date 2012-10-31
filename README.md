@@ -47,7 +47,6 @@ it in the configuration. To display the dump window manually:
 - **Administrator**: Go to Components -> J!Dump and click Popup.
 - **Site**: Make a new menu item for J!Dump. Set it to 'Open in New Window'
 
-
 Using J!Dump
 ------------
 
@@ -90,6 +89,8 @@ Notes
 You can't use dump() in system plugins that are run before the J!Dump plugin is run, 
 so it is best to use ordering in the plugin manager to put J!Dump upfront.
 
+J!Dump requires at least Joomla 2.5.5. If you need compatibility with an older version of J!Dump, please download
+[v2012-10-08](https://github.com/downloads/mathiasverraes/jdump/unzip_first_jdump_v2012-10-08.zip).
 
 Contributors
 -------------
