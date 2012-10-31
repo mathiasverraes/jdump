@@ -55,8 +55,8 @@ class DumpHelper extends JObject {
 /* @TODO remove this and implement this in a later version using JRoute
     function getComponentItemid( $option ) {
         jimport('joomla.application.menu');
-        $menu = & JMenu::getInstance();
-        $components = & $menu->getItems( 'type', 'component' );
+        $menu = JMenu::getInstance();
+        $components = $menu->getItems( 'type', 'component' );
 
         $attribs['option'] = '';
         foreach( $components as $component ) {
@@ -97,7 +97,7 @@ class DumpHelper extends JObject {
 
 		static function getSourcePath(&$trace)
 		{
-				$path = 'File: '.str_replace(JPATH_BASE.DS, '', $trace[0]['file'])
+				$path = 'File: '.str_replace(JPATH_BASE.'/', '', $trace[0]['file'])
 				. '<br />'
 				. 'Line: '.$trace[0]['line']
                 . '<br />';

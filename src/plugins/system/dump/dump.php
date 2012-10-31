@@ -11,11 +11,16 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.event.helper' );
 
-if( file_exists( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.php' ) ) {
-    require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'helper.php' );
-    require_once( JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'defines.php' );
+if( file_exists( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' ) ) {
+    require_once( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' );
+    require_once( JPATH_ADMINISTRATOR.'/components/com_dump/defines.php' );
 } else {
     JError::raiseNotice( 20, 'The J!Dump Plugin needs the J!Dump Component to function.' );
+}
+
+$version = new JVersion();
+if(!$version->isCompatible('2.5.5')) {
+    JError::raiseNotice( 20, 'J!Dump requires Joomla 2.5.5 or later. For older Joomla versions, please use https://github.com/downloads/mathiasverraes/jdump/unzip_first_jdump_v2012-10-08.zip');
 }
 
 class plgSystemDump extends JPlugin {
@@ -53,7 +58,7 @@ function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
 {
     $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
-    require_once JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'node.php';
+    require_once JPATH_ADMINISTRATOR.'/components/com_dump/node.php';
 
 		$source = '';
 		if (function_exists('debug_backtrace'))
@@ -96,7 +101,7 @@ function dumpMessage( $msg = '(Empty message)' ) {
  * Shortcut to dump system information
  */
 function dumpSysinfo() {
-    require_once JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dump'.DS.'sysinfo.php';
+    require_once JPATH_ADMINISTRATOR.'/components/com_dump/sysinfo.php';
     $sysinfo = new DumpSysinfo();
     dump( $sysinfo->data, 'System Information');
 }
