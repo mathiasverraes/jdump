@@ -56,18 +56,17 @@ class plgSystemDump extends JPlugin {
  */
 function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
 {
-    $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
+    $mainframe = JFactory::getApplication(); 
+    $option    = JRequest::getCmd('option');
 
     require_once JPATH_ADMINISTRATOR.'/components/com_dump/node.php';
 
 		$source = '';
 		if (function_exists('debug_backtrace'))
 		{
-				$trace = debug_backtrace();
-
-				$source = DumpHelper::getSourceFunction($trace);
-				//$source .= '@';
-				$source .= DumpHelper::getSourcePath($trace);
+			$trace = debug_backtrace();
+			$source = DumpHelper::getSourceFunction($trace) 
+			        . DumpHelper::getSourcePath($trace);
 		}
 
     // create a new node array
@@ -124,17 +123,18 @@ function dumpTraceBuild($trace)
 
 	$ret['file']     = $trace[0]['file'];
 	$ret['line']     = $trace[0]['line'];
+	
 	if (isset($trace[0]['class']) && isset($trace[0]['type']))
 		$ret['function'] = $trace[0]['class'].$trace[0]['type'].$trace[0]['function'];
 	else
 		$ret['function'] = $trace[0]['function'];
+		
 	$ret['args']     = $trace[0]['args'];
 
 	array_shift($trace);
+	
 	if (count($trace)>0)
-	{
 		$ret['backtrace'] = dumpTraceBuild($trace);
-	}
 
 	return $ret;
 }
