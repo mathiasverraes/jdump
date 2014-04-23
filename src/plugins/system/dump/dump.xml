@@ -11,7 +11,7 @@
 	<description>
 	<![CDATA[
 		J!Dump Plugin -- This plugin requires the J!Dump component to function. 
-		Don't forget to <a href="index.php?option=com_plugins&view=plugins">publish this plugin!</a>
+		Don't forget to <a href="index.php?option=com_plugins&view=plugins&filter_folder=system">publish this plugin!</a>
 	]]>
 	</description>
 	<files>

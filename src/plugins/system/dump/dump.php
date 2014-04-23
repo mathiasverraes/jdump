@@ -85,7 +85,7 @@ function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
  */
 function dumpTemplate( $var, $name = false ) {
     $name = $name ? $name :  $var->template;
-    dump( $var->params->_registry['parameter']['data'], $name );
+    dump( $var->params->toObject(), "dumpTemplate params : ".$name);
 }
 
 /**
