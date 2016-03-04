@@ -59,6 +59,8 @@ dump($variable, 'Variable Name');
 Simple huh? 'Variable Name' is optional and can be anything you like. If you use 
 a lot of dumps, you'll want to use some descriptive names.
 
+
+
 Shortcuts
 ---------
 
@@ -91,6 +93,59 @@ so it is best to use ordering in the plugin manager to put J!Dump upfront.
 
 J!Dump requires at least Joomla 2.5.5. If you need compatibility with an older version of J!Dump, please download
 [v2012-10-08](https://github.com/downloads/mathiasverraes/jdump/unzip_first_jdump_v2012-10-08.zip).
+
+
+
+Tips
+---------
+
+Tip 1 :
+------------
+If you want to dump an **SQL query of a Query Object**, JDump won't show anything ! ... you have to use the magic method **__toString()** :
+
+```php
+$db = JFactory::getDbo();
+$query = $db->getQuery(true);
+$query->select('id, name, email');
+$query->from('#__users');
+$query->order('username DESC');
+
+// display the content of an SQL query
+dump($query->__toString(), "My SQL query to read users");
+
+```
+
+This will show :
+"SELECT id, name, email FROM #__users ORDER BY username DESC"
+
+Tip 2 :
+------------
+You want to be sure that your web site won't show a fatal error if you forget to remove a dump trace in your code, before running in production ?
+In that case, you can add a IF test with 'if(function_exists("dump"))' just before calling "dump()". If the JDump plugin is uninstalled or unpublished, the **dump() method will not be called** :
+
+```php
+// ensure dump() is accessible
+if(function_exists("dump")) dump($myVar, "My Var is");
+
+```
+
+Tip 3 :
+------------
+You want to get the **file path of a PHP script that contains a specific object** ?
+You can use the implemention of the **Reflection process** (native PHP 5).
+Execute the Reflection process on the name of the class set in parameter (ex : JModuleHelper). 
+Call the JDump method getFileName() method on the resulted object and it's done !
+
+```php
+// get the path of a PHP script Object
+$ref = new ReflectionClass('JModuleHelper');
+dump($ref->getFileName(), 'Reflection Class path for '.$ref->getName());
+
+```
+This will show :
+
+![jdump-reflection_class](https://cloud.githubusercontent.com/assets/970021/11407200/92e255ea-93b1-11e5-979e-9ad64dabffd9.png)
+
 
 Contributors
 -------------
