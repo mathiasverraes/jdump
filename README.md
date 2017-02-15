@@ -24,7 +24,7 @@ stupid things like dump($password) !
 Download
 --------
 
-- [Download ready-made packages](https://github.com/mathiasverraes/jdump/downloads)
+- [Download ready-made package](https://github.com/mathiasverraes/jdump/releases/latest)
 - ...or make your own with [Phing](http://www.phing.info/trac/wiki/Users/Download)
 
 ```shell
