@@ -24,7 +24,7 @@ if(!$version->isCompatible('2.5.5')) {
 }
 
 class plgSystemDump extends JPlugin {
-    function plgSystemDump(& $subject, $params) {
+    function __construct(& $subject, $params) {
         parent::__construct($subject, $params);
     }
 
