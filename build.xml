@@ -72,7 +72,8 @@
 		</copy>
 		<move file="build/packages/plg_system_dump_v${version}.zip" tofile="build/packages/tmp/plg_system_dump_v${version}.zip" overwrite="true"/>
 		<move file="build/packages/com_dump_v${version}.zip" tofile="build/packages/tmp/com_dump_v${version}.zip" overwrite="true"/>
-		<zip destfile="build/packages/pkg_jdump_v${version}.zip" basedir="build/packages/tmp" />		<delete dir="build/packages/tmp" includeemptydirs="true" />
+		<zip destfile="build/packages/pkg_jdump_v${version}.zip" basedir="build/packages/tmp" />
+		<delete dir="build/packages/tmp" includeemptydirs="true" />
 	</target>
 
 </project>
