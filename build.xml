@@ -5,7 +5,7 @@
 		<property file="VERSION"  override="false" />
 		<tstamp/>
 		<mkdir dir="build" />
-		
+
 		<filterchain id="replacer">
 			<replacetokens begintoken="%%" endtoken="%%">
 				<token key="VERSION" value="${version}"/>
@@ -29,14 +29,14 @@
 			<fileset dir="./src/">
 				<include name="administrator/**" />
 				<include name="components/**" />
-				<!-- 
+				<!--
 				 <include name="media/**" />
 				 -->
 			</fileset>
 			<filterchain refid="replacer" />
-		</copy>		
+		</copy>
 		<move file="build/packages/tmp/administrator/components/com_dump/dump.xml" tofile="build/packages/tmp/dump.xml" />
-		
+
 		<zip destfile="build/packages/com_dump_v${version}.zip" basedir="build/packages/tmp" />
 		<delete dir="build/packages/tmp" includeemptydirs="true" />
 	</target>
@@ -50,13 +50,13 @@
 				<include name="system/dump/**" />
 			</fileset>
 			<filterchain refid="replacer" />
-		</copy>		
+		</copy>
 
 		<zip destfile="build/packages/plg_system_dump_v${version}.zip" basedir="build/packages/tmp/system/dump" />
-		
+
 		<delete dir="build/packages/tmp" includeemptydirs="true" />
 	</target>
-	
+
 	<target name="package" description="Package the whole shebang" depends="package-plugin, package-component">
 		<mkdir dir="build/packages/tmp" />
 		<copy todir="build/packages/tmp" >
@@ -64,12 +64,16 @@
 				<include name="README.md" />
 				<include name="VERSION" />
 			</fileset>
+			<fileset dir="./src">
+				<include name="pkg_dump.xml" />
+				<include name="pkg_script.php" />
+			</fileset>
 			<filterchain refid="replacer" />
 		</copy>
 		<move file="build/packages/plg_system_dump_v${version}.zip" tofile="build/packages/tmp/plg_system_dump_v${version}.zip" overwrite="true"/>
 		<move file="build/packages/com_dump_v${version}.zip" tofile="build/packages/tmp/com_dump_v${version}.zip" overwrite="true"/>
-		<zip destfile="build/packages/unzip_first_jdump_v${version}.zip" basedir="build/packages/tmp" />
+		<zip destfile="build/packages/pkg_jdump_v${version}.zip" basedir="build/packages/tmp" />
 		<delete dir="build/packages/tmp" includeemptydirs="true" />
 	</target>
-	
+
 </project>
