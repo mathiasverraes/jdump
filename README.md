@@ -3,7 +3,6 @@ J!Dump README
 
 Advanced print_r and var_dump replacer with object tree display.
 
-Follow [@mathiasverraes](http://twitter.com/mathiasverraes) for updates. 
 
 [Vote for this extension at the JED](http://extensions.joomla.org/extensions/miscellaneous/development/1509)
 
