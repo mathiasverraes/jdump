@@ -6,3 +6,5 @@ build/
 tmp/
 .idea/
 atlassian-ide-plugin.xml
+vendor
+composer.lock

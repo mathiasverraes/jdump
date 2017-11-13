@@ -9,15 +9,15 @@ Advanced print_r and var_dump replacer with object tree display.
 Features
 --------
 
-This utility makes life easy for developers and template designers. You use it to 
-see what's inside a variable, an array or an object. Instead of using print_r() or 
-var_dump(), you can now use dump(). This will open a popup window with a nice expandable 
+This utility makes life easy for developers and template designers. You use it to
+see what's inside a variable, an array or an object. Instead of using print_r() or
+var_dump(), you can now use dump(). This will open a popup window with a nice expandable
 tree, showing the contents of the variable. It will even show a list of available
-methods for each object. You have to see it to believe it! You can use dump() in your 
+methods for each object. You have to see it to believe it! You can use dump() in your
 extensions, in the core, in libraries and even in templates.
 
-**Warning!** This component is only meant to be used on development test sites, NOT 
-in live or production environments. If you must use it on a live site, don't do 
+**Warning!** This component is only meant to be used on development test sites, NOT
+in live or production environments. If you must use it on a live site, don't do
 stupid things like dump($password) !
 
 Download
@@ -26,10 +26,25 @@ Download
 - [Download ready-made package](https://github.com/mathiasverraes/jdump/releases/latest)
 - ...or make your own with [Phing](http://www.phing.info/trac/wiki/Users/Download)
 
+If you have phing installed:
+--------
+
 ```shell
 git clone git://github.com/mathiasverraes/jdump.git
 cd jdump
 phing
+```
+
+If you don't have phing installed but have composer installed
+---------
+
+> OpenSuse 42.3 phing from repo is incompatible with the latest PHP, so it was needed to go this way
+
+```shell
+git clone git://github.com/mathiasverraes/jdump.git
+cd jdump
+composer install
+./vendor/bin/phing
 ```
 
 The zip will be in the build/packages folder.
@@ -37,10 +52,12 @@ The zip will be in the build/packages folder.
 Installation
 ------------
 
-Install both the component and the plugin. Make sure the plugin is published. But 
+Since 1.2.2 just install the package file (pkg_jdump_v*.zip). It will automatically install and publish JDump component and plugin.
+
+For older versions: Install both the component and the plugin. Make sure the plugin is published. But
 you probably figured that out already.
 
-If you don't want the dump popup window to appear automatically, you can disable 
+If you don't want the dump popup window to appear automatically, you can disable
 it in the configuration. To display the dump window manually:
 
 - **Administrator**: Go to Components -> J!Dump and click Popup.
@@ -55,7 +72,7 @@ Anywhere in your code, type:
 dump($variable, 'Variable Name');
 ```
 
-Simple huh? 'Variable Name' is optional and can be anything you like. If you use 
+Simple huh? 'Variable Name' is optional and can be anything you like. If you use
 a lot of dumps, you'll want to use some descriptive names.
 
 
@@ -87,7 +104,7 @@ dumpTrace();
 Notes
 -----
 
-You can't use dump() in system plugins that are run before the J!Dump plugin is run, 
+You can't use dump() in system plugins that are run before the J!Dump plugin is run,
 so it is best to use ordering in the plugin manager to put J!Dump upfront.
 
 J!Dump requires at least Joomla 2.5.5. If you need compatibility with an older version of J!Dump, please download
@@ -132,7 +149,7 @@ Tip 3 :
 ------------
 You want to get the **file path of a PHP script that contains a specific object** ?
 You can use the implemention of the **Reflection process** (native PHP 5).
-Execute the Reflection process on the name of the class set in parameter (ex : JModuleHelper). 
+Execute the Reflection process on the name of the class set in parameter (ex : JModuleHelper).
 Call the JDump method getFileName() method on the resulted object and it's done !
 
 ```php
@@ -164,5 +181,5 @@ J!Dump is licensed as GNU/GPL v2.
 Credits
 -------
 
-This component includes Folder Tree Static by Alf Magne Kalleland. It is released 
+This component includes Folder Tree Static by Alf Magne Kalleland. It is released
 under LGPL and can be found at http://www.dhtmlgoodies.com/
