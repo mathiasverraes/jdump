@@ -82,7 +82,7 @@ class DumpHelper extends JObject {
 
 					if ($func!='include' && $func!='include_once' && $func!='require' && $func!='require_once')
 					{
-							if (@$trace[$i]['type'] && @$trace[$i]['class'])
+							if (!empty($trace[$i]['type']) && !empty(@$trace[$i]['class']))
 									$function = $trace[$i]['class'].'<br />&nbsp;'.$trace[$i]['type'].'&nbsp;'.$func.'()';
 							else
 									$function = $func;
