@@ -39,7 +39,7 @@ class plgSystemDump extends JPlugin {
         $dumpConfig = JComponentHelper::getParams( 'com_dump' );
         $autopopup  = $dumpConfig->get( 'autopopup', 1 );
 
-        $userstate = $mainframe->getUserState( 'dump.nodes' );
+        $userstate = $mainframe->getUserState( 'dump.nodes', array() );
         $cnt_dumps  = count( $userstate );
 
         if( $autopopup && $cnt_dumps) {
