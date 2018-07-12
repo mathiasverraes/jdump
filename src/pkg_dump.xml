@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
- <extension type="package" version="1.6" method="upgrade">
+<extension type="package" version="1.6" method="upgrade">
 
 	<name>Dump</name>
 	<author>Mathias Verraes</author>
@@ -10,18 +10,18 @@
 
 	<version>%%VERSION%%</version>
 
- <packagename>dump</packagename>
- <url>https://github.com/mathiasverraes/jdump/</url>
- <packager>Mathias Verraes</packager>
- <packagerurl>https://github.com/mathiasverraes/jdump/</packagerurl>
- <description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
+	<packagename>dump</packagename>
+	<url>https://github.com/mathiasverraes/jdump/</url>
+	<packager>Mathias Verraes</packager>
+	<packagerurl>https://github.com/mathiasverraes/jdump/</packagerurl>
+	<description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
 
 <!--
  <update>http://www.updateurl.com/update</update>
 -->
- <scriptfile>pkg_script.php</scriptfile>
-  <files>
-   <file type="plugin" id="dump" group="system">plg_system_dump_v%%VERSION%%.zip</file>
-   <file type="component" id="com_dump" >com_dump_v%%VERSION%%.zip</file>
- </files>
- </extension>
+	<scriptfile>pkg_script.php</scriptfile>
+	<files>
+		<file type="plugin" id="dump" group="system">plg_system_dump_v%%VERSION%%.zip</file>
+		<file type="component" id="com_dump" >com_dump_v%%VERSION%%.zip</file>
+	</files>
+</extension>

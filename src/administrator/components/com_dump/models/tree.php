@@ -10,28 +10,28 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 class DumpModelTree extends JModelLegacy {
-    var $_nodes = array();
+	var $_nodes = array();
 
-    function __construct() {
-        $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
+	function __construct() {
+		$mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
-        //get the userstate
-        $this->_nodes = $mainframe->getUserState( 'dump.nodes' );
-        if ( !is_array( $this->_nodes ) ) {
-            $this->_nodes = array();
-        }
-        // and clear it
-        $mainframe->setUserState( 'dump.nodes', array() );
+		//get the userstate
+		$this->_nodes = $mainframe->getUserState( 'dump.nodes' );
+		if ( !is_array( $this->_nodes ) ) {
+			$this->_nodes = array();
+		}
+		// and clear it
+		$mainframe->setUserState( 'dump.nodes', array() );
 
-        parent::__construct();
+		parent::__construct();
 
-    }
+	}
 
-    function & getNodes() {
-        return $this->_nodes;
-    }
+	function & getNodes() {
+		return $this->_nodes;
+	}
 
-    function countDumps() {
-        return count( $this->_nodes ) ;
-    }
+	function countDumps() {
+		return count( $this->_nodes ) ;
+	}
 }

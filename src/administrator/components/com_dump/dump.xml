@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="component" method="upgrade">
-    <name>Dump</name>
-    <author>Mathias Verraes</author>
-    <creationDate>%%TODAY%%</creationDate>
-    <copyright>(c) Mathias Verraes 2006 - 2012</copyright>
-    <license>GNU/GPL</license>
-    <authorEmail></authorEmail>
-    <authorUrl>https://github.com/mathiasverraes/jdump</authorUrl>
-    <version>%%VERSION%%</version>
-    <description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
-    <files folder="components/com_dump">
-        <filename>dump.php</filename>
-        <folder>views</folder>
-    </files>
-    <administration>
-        <files folder="administrator/components/com_dump">
-            <filename>config.xml</filename>
-            <filename>controller.php</filename>
-            <filename>defines.php</filename>
-            <filename>dump.php</filename>
-            <filename>helper.php</filename>
-            <filename>node.php</filename>
+	<name>Dump</name>
+	<author>Mathias Verraes</author>
+	<creationDate>%%TODAY%%</creationDate>
+	<copyright>(c) Mathias Verraes 2006 - 2012</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail></authorEmail>
+	<authorUrl>https://github.com/mathiasverraes/jdump</authorUrl>
+	<version>%%VERSION%%</version>
+	<description>J!Dump -- Advanced print_r and var_dump replacer with DHTML tree display.</description>
+	<files folder="components/com_dump">
+		<filename>dump.php</filename>
+		<folder>views</folder>
+	</files>
+	<administration>
+		<files folder="administrator/components/com_dump">
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>defines.php</filename>
+			<filename>dump.php</filename>
+			<filename>helper.php</filename>
+			<filename>node.php</filename>
 			<filename>sysinfo.php</filename>
 
-            <folder>assets</folder>
-            <folder>models</folder>
-            <folder>views</folder>
-        </files>
-        <menu>J!Dump</menu>
-    </administration>
+			<folder>assets</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+		</files>
+		<menu>J!Dump</menu>
+	</administration>
 </extension>

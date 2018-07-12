@@ -44,17 +44,17 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 <a href="#" onclick="window.location.reload( true );return false;" id="dumpRefresh" class="dumpRefresh">Refresh</a>
 
 <?php if( $this->closebutton ) {
-    ?><a href="#" onclick="window.close();return false;" class="dumpClose">Close Window</a><?php
+	?><a href="#" onclick="window.close();return false;" class="dumpClose">Close Window</a><?php
 } ?>
 
 <?php if( $this->tree=='' ) {
-    ?><br /><br />No dumped variables found.<br /><?php
+	?><br /><br />No dumped variables found.<br /><?php
 } else {
-    ?><a href="#" onclick="expandAll('dhtmlgoodies_tree');return false;" class="dumpExpandAll">Expand all</a>
+	?><a href="#" onclick="expandAll('dhtmlgoodies_tree');return false;" class="dumpExpandAll">Expand all</a>
 <a href="#" onclick="collapseAll('dhtmlgoodies_tree');return false;" class="dumpCollapseAll">Collapse all</a><br /><br />
 <ul id="dhtmlgoodies_tree" class="dhtmlgoodies_tree"><?php
-    echo $this->tree
-    ?></ul><?php
+	echo $this->tree
+	?></ul><?php
 }?>
 
 <br />

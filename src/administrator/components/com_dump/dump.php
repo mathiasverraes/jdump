@@ -17,7 +17,7 @@ require_once( JPATH_COMPONENT_ADMINISTRATOR . '/controller.php' );
 
 // Require specific controller if requested
 if( $controller = JRequest::getCmd('controller') ) {
-    require_once ( JPATH_COMPONENT_ADMINISTRATOR . '/controllers/' . $controller . '.php' );
+	require_once ( JPATH_COMPONENT_ADMINISTRATOR . '/controllers/' . $controller . '.php' );
 }
 
 // Create the controller
