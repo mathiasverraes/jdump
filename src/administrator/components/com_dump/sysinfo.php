@@ -57,10 +57,13 @@ class DumpSysinfo extends JObject
 	}
 
 	// recursive natural key sort
-	function sort( & $array ){
+	function sort( & $array )
+	{
 		uksort( $array, 'strnatcasecmp' ); // this will do natural key sorting (A=a)
-		foreach( array_keys( $array ) as $k ){
-			if( 'array' == gettype( $array[$k] ) ){
+		foreach( array_keys( $array ) as $k )
+		{
+			if( 'array' == gettype( $array[$k] ) )
+			{
 				$this->sort( $array[$k] );
 			}
 		}

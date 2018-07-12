@@ -11,7 +11,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.event.helper' );
 
-if( file_exists( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' ) ) {
+if( file_exists( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' ) ) 
+{
 	require_once( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' );
 	require_once( JPATH_ADMINISTRATOR.'/components/com_dump/defines.php' );
 } else {
@@ -19,19 +20,24 @@ if( file_exists( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' ) ) {
 }
 
 $version = new JVersion();
-if(!$version->isCompatible('2.5.5')) {
+if(!$version->isCompatible('2.5.5')) 
+{
 	JError::raiseNotice( 20, 'J!Dump requires Joomla 2.5.5 or later. For older Joomla versions, please use https://github.com/downloads/mathiasverraes/jdump/unzip_first_jdump_v2012-10-08.zip');
 }
 
-class plgSystemDump extends JPlugin {
-	function __construct(& $subject, $params) {
+class plgSystemDump extends JPlugin 
+{
+	function __construct(& $subject, $params) 
+	{
 		parent::__construct($subject, $params);
 	}
 
-	function onAfterRender() {
+	function onAfterRender() 
+	{
 	   $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
-		if($option == 'com_dump'){
+		if($option == 'com_dump')
+		{
 			return;
 		}
 
@@ -42,7 +48,8 @@ class plgSystemDump extends JPlugin {
 		$userstate = $mainframe->getUserState( 'dump.nodes', array() );
 		$cnt_dumps  = count( $userstate );
 
-		if( $autopopup && $cnt_dumps) {
+		if( $autopopup && $cnt_dumps) 
+		{
 			DumpHelper::showPopup();
 		}
 	}
@@ -83,7 +90,8 @@ function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
  * Shortcut to dump the parameters of a template
  * @param object $var The "$this" object in the template
  */
-function dumpTemplate( $var, $name = false ) {
+function dumpTemplate( $var, $name = false ) 
+{
 	$name = $name ? $name :  $var->template;
 	dump( $var->params->toObject(), "dumpTemplate params : ".$name);
 }
@@ -92,14 +100,16 @@ function dumpTemplate( $var, $name = false ) {
  * Shortcut to dump a message
  * @param string $msg The message
  */
-function dumpMessage( $msg = '(Empty message)' ) {
+function dumpMessage( $msg = '(Empty message)' ) 
+{
 	dump( $msg, null, 'message', 0 );
 }
 
 /**
  * Shortcut to dump system information
  */
-function dumpSysinfo() {
+function dumpSysinfo() 
+{
 	require_once JPATH_ADMINISTRATOR.'/components/com_dump/sysinfo.php';
 	$sysinfo = new DumpSysinfo();
 	dump( $sysinfo->data, 'System Information');

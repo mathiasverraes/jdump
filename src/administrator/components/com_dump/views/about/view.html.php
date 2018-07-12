@@ -9,8 +9,10 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-class DumpViewAbout extends JViewLegacy {
-	function display($tpl = null) {
+class DumpViewAbout extends JViewLegacy 
+{
+	function display($tpl = null) 
+	{
 		$mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
 		// Toolbar

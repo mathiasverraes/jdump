@@ -9,9 +9,11 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-class DumpController extends JControllerLegacy{
+class DumpController extends JControllerLegacy
+{
 
-	function display($cachable = false, $urlparams = false) {
+	function display($cachable = false, $urlparams = false) 
+	{
 		$mainframe = JFactory::getApplication(); 
 		$option = JRequest::getCmd('option');
 		$Itemid = JRequest::getInt('Itemid');
@@ -23,10 +25,13 @@ class DumpController extends JControllerLegacy{
 
 		$document   = JFactory::getDocument();
 		// specify the type of the view (raw for dump tree in Frontend, html for admin comp)
-		if($mainframe->isSite()) {
+		if($mainframe->isSite()) 
+		{
 			// specify the RAW format for the JDump Frontend menu link
 			$viewType   = "raw";
-		} else {
+		} 
+		else 
+		{
 			$viewType   = $document->getType();
 		}
 		// get some vars
@@ -38,7 +43,8 @@ class DumpController extends JControllerLegacy{
 		$view->setLayout( $viewLayout );
 
 		// Get/Create the model
-		if ( $model = $this->getModel( $viewName ) ) {
+		if ( $model = $this->getModel( $viewName ) ) 
+		{
 			// Push the model into the view (as default)
 			$view->setModel( $model, true );
 		}

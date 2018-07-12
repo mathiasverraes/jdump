@@ -11,8 +11,10 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 
 class DumpHelper extends JObject {
+	
 
-	static function showPopup() {
+	static function showPopup() 
+	{
 		$mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
 		jimport( 'joomla.application.helper' );
@@ -105,10 +107,12 @@ class DumpHelper extends JObject {
 				return $path;
 		}
 
-	static function & getMaxDepth() {
+	static function & getMaxDepth() 
+	{
 		static $maxdepth = null;
 
-		if ( !$maxdepth ) {
+		if ( !$maxdepth ) 
+		{
 			$dumpConfig         = JComponentHelper::getParams( 'com_dump' );
 			$maxdepth           = intval( $dumpConfig->get( 'maxdepth', 5 ) );
 			if( $maxdepth > 20 ) $maxdepth=20;
