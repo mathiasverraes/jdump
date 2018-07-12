@@ -11,14 +11,14 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 // use JPATH_COMPONENT_ADMINISTRATOR so we can use this in both site and administrator
 // Defines
-require_once( JPATH_COMPONENT_ADMINISTRATOR . '/defines.php' );
+require_once(JPATH_COMPONENT_ADMINISTRATOR . '/defines.php');
 // Require the base controller
-require_once( JPATH_COMPONENT_ADMINISTRATOR . '/controller.php' );
+require_once(JPATH_COMPONENT_ADMINISTRATOR . '/controller.php');
 
 // Require specific controller if requested
-if( $controller = JRequest::getCmd('controller') ) 
+if ($controller = JRequest::getCmd('controller')) 
 {
-	require_once ( JPATH_COMPONENT_ADMINISTRATOR . '/controllers/' . $controller . '.php' );
+	require_once (JPATH_COMPONENT_ADMINISTRATOR . '/controllers/' . $controller . '.php');
 }
 
 // Create the controller
@@ -26,6 +26,6 @@ $classname  = 'DumpController'.$controller;
 $controller = new $classname();
 
 // Perform the Request task
-$controller->execute( JRequest::getCmd( 'task' ) );
+$controller->execute(JRequest::getCmd('task'));
 
 $controller->redirect();

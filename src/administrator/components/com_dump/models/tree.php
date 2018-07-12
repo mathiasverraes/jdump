@@ -18,13 +18,13 @@ class DumpModelTree extends JModelLegacy
 		$mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
 		//get the userstate
-		$this->_nodes = $mainframe->getUserState( 'dump.nodes' );
-		if ( !is_array( $this->_nodes ) ) 
+		$this->_nodes = $mainframe->getUserState('dump.nodes');
+		if (!is_array($this->_nodes)) 
 		{
 			$this->_nodes = array();
 		}
 		// and clear it
-		$mainframe->setUserState( 'dump.nodes', array() );
+		$mainframe->setUserState('dump.nodes', array());
 
 		parent::__construct();
 

@@ -18,8 +18,8 @@ class DumpSysinfo extends JObject
 	function __construct()
 	{
 		// execute all methods that start with '_load'
-		foreach( get_class_methods( $this ) as $method ) {
-			if( '_load' == substr( $method, 0, 5 ) ) {
+		foreach (get_class_methods($this) as $method) {
+			if ('_load' == substr($method, 0, 5)) {
 				$this->$method();
 			}
 		}
@@ -32,7 +32,7 @@ class DumpSysinfo extends JObject
 		$jconf->password        = '*******';
 		$jconf->ftp_pass        = '*******';
 		$jconf->secret          = '*******';
-		$this->data['Joomla Configuration'] = JArrayHelper::fromObject( $jconf );
+		$this->data['Joomla Configuration'] = JArrayHelper::fromObject($jconf);
 	}
 
 	function _loadVersions()
@@ -57,14 +57,14 @@ class DumpSysinfo extends JObject
 	}
 
 	// recursive natural key sort
-	function sort( & $array )
+	function sort(&$array)
 	{
-		uksort( $array, 'strnatcasecmp' ); // this will do natural key sorting (A=a)
-		foreach( array_keys( $array ) as $k )
+		uksort($array, 'strnatcasecmp'); // this will do natural key sorting (A=a)
+		foreach (array_keys($array) as $k)
 		{
-			if( 'array' == gettype( $array[$k] ) )
+			if ('array' == gettype($array[$k]))
 			{
-				$this->sort( $array[$k] );
+				$this->sort($array[$k]);
 			}
 		}
 	}

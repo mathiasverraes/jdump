@@ -11,18 +11,18 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport( 'joomla.event.helper' );
 
-if( file_exists( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' ) ) 
+if (file_exists(JPATH_ADMINISTRATOR.'/components/com_dump/helper.php')) 
 {
-	require_once( JPATH_ADMINISTRATOR.'/components/com_dump/helper.php' );
-	require_once( JPATH_ADMINISTRATOR.'/components/com_dump/defines.php' );
+	require_once(JPATH_ADMINISTRATOR.'/components/com_dump/helper.php');
+	require_once(JPATH_ADMINISTRATOR.'/components/com_dump/defines.php');
 } else {
-	JError::raiseNotice( 20, 'The J!Dump Plugin needs the J!Dump Component to function.' );
+	JError::raiseNotice(20, 'The J!Dump Plugin needs the J!Dump Component to function.');
 }
 
 $version = new JVersion();
-if(!$version->isCompatible('2.5.5')) 
+if (!$version->isCompatible('2.5.5')) 
 {
-	JError::raiseNotice( 20, 'J!Dump requires Joomla 2.5.5 or later. For older Joomla versions, please use https://github.com/downloads/mathiasverraes/jdump/unzip_first_jdump_v2012-10-08.zip');
+	JError::raiseNotice(20, 'J!Dump requires Joomla 2.5.5 or later. For older Joomla versions, please use https://github.com/downloads/mathiasverraes/jdump/unzip_first_jdump_v2012-10-08.zip');
 }
 
 class plgSystemDump extends JPlugin 
@@ -36,7 +36,7 @@ class plgSystemDump extends JPlugin
 	{
 	   $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
 
-		if($option == 'com_dump')
+		if ($option == 'com_dump')
 		{
 			return;
 		}
@@ -46,7 +46,7 @@ class plgSystemDump extends JPlugin
 		$autopopup  = $dumpConfig->get( 'autopopup', 1 );
 
 		$userstate = $mainframe->getUserState( 'dump.nodes', array() );
-		$cnt_dumps  = count( $userstate );
+		$cnt_dumps  = count($userstate);
 
 		if( $autopopup && $cnt_dumps) 
 		{
@@ -61,7 +61,7 @@ class plgSystemDump extends JPlugin
  * @param mixed $var The variable you want to dump
  * @param mixed $name The name of the variable you want to dump
  */
-function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
+function dump($var = null, $name = '(unknown name)', $type = null, $level = 0)
 {
 	$mainframe = JFactory::getApplication(); 
 	$option    = JRequest::getCmd('option');
@@ -77,32 +77,32 @@ function dump( $var = null, $name = '(unknown name)', $type = null, $level = 0 )
 		}
 
 	// create a new node array
-	$node           = DumpNode::getNode( $var, $name, $type, $level, $source );
+	$node           = DumpNode::getNode($var, $name, $type, $level, $source);
 	//get the current userstate
-	$userstate      = $mainframe->getUserState( 'dump.nodes' );
+	$userstate      = $mainframe->getUserState('dump.nodes');
 	// append the node to the array
 	$userstate[]    = $node;
 	// set the userstate to the new array
-	$mainframe->setUserState( 'dump.nodes', $userstate );
+	$mainframe->setUserState('dump.nodes', $userstate);
 }
 
 /**
  * Shortcut to dump the parameters of a template
  * @param object $var The "$this" object in the template
  */
-function dumpTemplate( $var, $name = false ) 
+function dumpTemplate($var, $name = false) 
 {
 	$name = $name ? $name :  $var->template;
-	dump( $var->params->toObject(), "dumpTemplate params : ".$name);
+	dump($var->params->toObject(), "dumpTemplate params : ".$name);
 }
 
 /**
  * Shortcut to dump a message
  * @param string $msg The message
  */
-function dumpMessage( $msg = '(Empty message)' ) 
+function dumpMessage($msg = '(Empty message)') 
 {
-	dump( $msg, null, 'message', 0 );
+	dump($msg, null, 'message', 0);
 }
 
 /**
@@ -143,7 +143,7 @@ function dumpTraceBuild($trace)
 
 	array_shift($trace);
 	
-	if (count($trace)>0)
+	if (count($trace) > 0)
 		$ret['backtrace'] = dumpTraceBuild($trace);
 
 	return $ret;

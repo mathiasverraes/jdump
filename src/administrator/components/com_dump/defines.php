@@ -10,7 +10,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $mainframe = JFactory::getApplication(); $option = JRequest::getCmd('option');
-$phpversion = explode( '.', phpversion() );
+$phpversion = explode('.', phpversion());
 
-define( 'DUMP_VERSION', '%%VERSION%%' );
-define( 'DUMP_URL',     JURI::root() . 'administrator/components/com_dump/' );
+define('DUMP_VERSION', '%%VERSION%%');
+define('DUMP_URL',     JURI::root() . 'administrator/components/com_dump/');

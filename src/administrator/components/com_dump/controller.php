@@ -20,12 +20,12 @@ class DumpController extends JControllerLegacy
 		
 
 		// we need to add these paths so the component can work in both site and administrator
-		$this->addViewPath( JPATH_COMPONENT_ADMINISTRATOR . '/views' );
-		$this->addModelPath( JPATH_COMPONENT_ADMINISTRATOR . '/models' );
+		$this->addViewPath(JPATH_COMPONENT_ADMINISTRATOR . '/views');
+		$this->addModelPath(JPATH_COMPONENT_ADMINISTRATOR . '/models');
 
 		$document   = JFactory::getDocument();
 		// specify the type of the view (raw for dump tree in Frontend, html for admin comp)
-		if($mainframe->isSite()) 
+		if ($mainframe->isSite()) 
 		{
 			// specify the RAW format for the JDump Frontend menu link
 			$viewType   = "raw";
@@ -35,18 +35,18 @@ class DumpController extends JControllerLegacy
 			$viewType   = $document->getType();
 		}
 		// get some vars
-		$viewName	= JRequest::getCmd( 'view', 'about' );
-		$viewLayout = JRequest::getCmd( 'layout', 'default' );
+		$viewName	= JRequest::getCmd('view', 'about');
+		$viewLayout = JRequest::getCmd('layout', 'default');
 
 		// get the view & set the layout
-		$view       = $this->getView( $viewName,  $viewType);
-		$view->setLayout( $viewLayout );
+		$view       = $this->getView($viewName,  $viewType);
+		$view->setLayout($viewLayout);
 
 		// Get/Create the model
-		if ( $model = $this->getModel( $viewName ) ) 
+		if ($model = $this->getModel($viewName)) 
 		{
 			// Push the model into the view (as default)
-			$view->setModel( $model, true );
+			$view->setModel($model, true);
 		}
 
 		// Display the view
