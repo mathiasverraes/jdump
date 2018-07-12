@@ -15,7 +15,9 @@ if (file_exists(JPATH_ADMINISTRATOR.'/components/com_dump/helper.php'))
 {
 	require_once(JPATH_ADMINISTRATOR.'/components/com_dump/helper.php');
 	require_once(JPATH_ADMINISTRATOR.'/components/com_dump/defines.php');
-} else {
+} 
+else 
+{
 	JError::raiseNotice(20, 'The J!Dump Plugin needs the J!Dump Component to function.');
 }
 
